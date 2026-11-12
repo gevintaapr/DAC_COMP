@@ -1,0 +1,303 @@
+kode_provinsi,provinsi,tahun,indikator,nilai,satuan,status_data,catatan_keandalan,robust_z,flag_outlier,flag_patahan_seri,perubahan_antartahun,flag_lonjakan,flag_perlu_verifikasi,flag_kualitas
+91,Papua Barat,2020,APS_13_15,96.87,persen,tersedia,,0.35,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,APS_13_15,80.48,persen,tersedia,,-6.85,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+76,Sulawesi Barat,2021,APS_13_15,90.12,persen,tersedia,,-3.11,rendah_moderat,False,0.05,False,False,outlier_rendah_moderat
+91,Papua Barat,2021,APS_13_15,96.85,persen,tersedia,,0.2,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,APS_13_15,80.02,persen,tersedia,,-8.06,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+76,Sulawesi Barat,2022,APS_13_15,89.39,persen,tersedia,,-3.2,rendah_moderat,False,-0.73,False,False,outlier_rendah_moderat
+91,Papua Barat,2022,APS_13_15,97.37,persen,tersedia,,0.5,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,APS_13_15,81.66,persen,tersedia,,-6.78,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+76,Sulawesi Barat,2023,APS_13_15,89.47,persen,tersedia,,-3.27,rendah_moderat,False,0.08,False,False,outlier_rendah_moderat
+91,Papua Barat,2023,APS_13_15,97.42,persen,tersedia,,0.52,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,APS_13_15,80.91,persen,tersedia,,-7.35,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+95,Papua Selatan,2024,APS_13_15,85.51,persen,tersedia,,-4.57,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+96,Papua Tengah,2024,APS_13_15,68.42,persen,tersedia,,-11.92,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2024,APS_13_15,73.12,persen,tersedia,,-9.9,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+95,Papua Selatan,2025,APS_13_15,89.29,persen,tersedia,,-5.03,rendah_ekstrem,False,3.78,False,False,outlier_rendah_ekstrem
+96,Papua Tengah,2025,APS_13_15,67.86,persen,tersedia,,-20.41,rendah_ekstrem,False,-0.56,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2025,APS_13_15,71.08,persen,tersedia,,-18.1,rendah_ekstrem,False,-2.04,False,False,outlier_rendah_ekstrem
+91,Papua Barat,2020,APS_16_18,81.51,persen,tersedia,,1.12,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,APS_16_18,64.83,persen,tersedia,,-1.48,,True,,False,False,patahan_seri_pemekaran
+91,Papua Barat,2021,APS_16_18,81.21,persen,tersedia,,1.14,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,APS_16_18,63.98,persen,tersedia,,-1.82,,True,,False,False,patahan_seri_pemekaran
+91,Papua Barat,2022,APS_16_18,80.56,persen,tersedia,,1.05,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,APS_16_18,65.93,persen,tersedia,,-1.46,,True,,False,False,patahan_seri_pemekaran
+91,Papua Barat,2023,APS_16_18,80.58,persen,tersedia,,0.96,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,APS_16_18,64.15,persen,tersedia,,-1.67,,True,,False,False,patahan_seri_pemekaran
+34,DI Yogyakarta,2024,APS_16_18,90.36,persen,tersedia,,2.82,tinggi_moderat,False,-0.81,False,False,outlier_tinggi_moderat
+96,Papua Tengah,2024,APS_16_18,47.65,persen,tersedia,,-5.3,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2024,APS_16_18,56.09,persen,tersedia,,-3.69,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+34,DI Yogyakarta,2025,APS_16_18,93.03,persen,tersedia,,2.95,tinggi_moderat,False,2.67,False,False,outlier_tinggi_moderat
+96,Papua Tengah,2025,APS_16_18,44.61,persen,tersedia,,-6.17,rendah_ekstrem,False,-3.04,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2025,APS_16_18,50.79,persen,tersedia,,-5.0,rendah_ekstrem,False,-5.3,False,False,outlier_rendah_ekstrem
+34,DI Yogyakarta,2020,APS_19_23,56.75,persen,tersedia,,5.32,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2020,APS_19_23,35.18,persen,tersedia,,1.46,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,APS_19_23,25.51,persen,tersedia,,-0.27,,True,,False,False,patahan_seri_pemekaran
+34,DI Yogyakarta,2021,APS_19_23,56.41,persen,tersedia,,4.9,tinggi_ekstrem,False,-0.34,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2021,APS_19_23,34.77,persen,tersedia,,1.22,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,APS_19_23,25.26,persen,tersedia,,-0.39,,True,,False,False,patahan_seri_pemekaran
+34,DI Yogyakarta,2022,APS_19_23,56.69,persen,tersedia,,4.64,tinggi_ekstrem,False,0.28,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2022,APS_19_23,34.98,persen,tersedia,,1.09,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,APS_19_23,25.12,persen,tersedia,,-0.52,,True,,False,False,patahan_seri_pemekaran
+34,DI Yogyakarta,2023,APS_19_23,55.8,persen,tersedia,,4.34,tinggi_ekstrem,False,-0.89,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2023,APS_19_23,35.74,persen,tersedia,,1.0,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,APS_19_23,26.06,persen,tersedia,,-0.6,,True,,False,False,patahan_seri_pemekaran
+21,Kepulauan Riau,2024,APS_19_23,26.28,persen,tersedia,,-0.62,,False,3.85,True,False,lonjakan_antartahun
+31,DKI Jakarta,2024,APS_19_23,32.98,persen,tersedia,,0.42,,False,4.55,True,False,lonjakan_antartahun
+34,DI Yogyakarta,2024,APS_19_23,54.17,persen,tersedia,,3.7,tinggi_ekstrem,False,-1.63,False,False,outlier_tinggi_ekstrem
+34,DI Yogyakarta,2025,APS_19_23,54.72,persen,tersedia,,3.95,tinggi_ekstrem,False,0.55,False,False,outlier_tinggi_ekstrem
+81,Maluku,2025,APS_19_23,29.66,persen,tersedia,,0.09,,False,-9.92,True,True,lonjakan_antartahun;perlu_verifikasi
+97,Papua Pegunungan,2025,APS_19_23,12.48,persen,tersedia,,-2.56,,False,-5.36,True,False,lonjakan_antartahun
+72,Sulawesi Tengah,2020,APS_7_12,98.38,persen,tersedia,,-3.77,rendah_moderat,False,,False,False,outlier_rendah_moderat
+76,Sulawesi Barat,2020,APS_7_12,98.33,persen,tersedia,,-3.93,rendah_moderat,False,,False,False,outlier_rendah_moderat
+91,Papua Barat,2020,APS_7_12,97.89,persen,tersedia,,-5.38,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+94,Papua,2020,APS_7_12,82.99,persen,tersedia,,-54.4,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+53,Nusa Tenggara Timur,2021,APS_7_12,98.42,persen,tersedia,,-4.23,rendah_moderat,False,-0.15,False,False,outlier_rendah_moderat
+72,Sulawesi Tengah,2021,APS_7_12,98.5,persen,tersedia,,-3.91,rendah_moderat,False,0.12,False,False,outlier_rendah_moderat
+76,Sulawesi Barat,2021,APS_7_12,98.19,persen,tersedia,,-5.14,rendah_ekstrem,False,-0.14,False,False,outlier_rendah_ekstrem
+91,Papua Barat,2021,APS_7_12,98.08,persen,tersedia,,-5.57,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+94,Papua,2021,APS_7_12,83.43,persen,tersedia,,-63.7,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+72,Sulawesi Tengah,2022,APS_7_12,98.22,persen,tersedia,,-4.05,rendah_ekstrem,False,-0.28,False,False,outlier_rendah_ekstrem
+76,Sulawesi Barat,2022,APS_7_12,98.4,persen,tersedia,,-3.41,rendah_moderat,False,0.21,False,False,outlier_rendah_moderat
+91,Papua Barat,2022,APS_7_12,98.27,persen,tersedia,,-3.87,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+94,Papua,2022,APS_7_12,84.35,persen,tersedia,,-53.29,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+72,Sulawesi Tengah,2023,APS_7_12,98.34,persen,tersedia,,-3.92,rendah_ekstrem,False,0.12,False,False,outlier_rendah_ekstrem
+76,Sulawesi Barat,2023,APS_7_12,98.31,persen,tersedia,,-4.03,rendah_ekstrem,False,-0.09,False,False,outlier_rendah_ekstrem
+91,Papua Barat,2023,APS_7_12,98.41,persen,tersedia,,-3.66,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+94,Papua,2023,APS_7_12,83.61,persen,tersedia,,-57.62,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+91,Papua Barat,2024,APS_7_12,97.6,persen,tersedia,,-4.8,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+94,Papua,2024,APS_7_12,97.09,persen,tersedia,,-6.18,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+95,Papua Selatan,2024,APS_7_12,90.47,persen,tersedia,,-24.04,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+96,Papua Tengah,2024,APS_7_12,74.63,persen,tersedia,,-66.78,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2024,APS_7_12,79.98,persen,tersedia,,-52.34,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+91,Papua Barat,2025,APS_7_12,97.59,persen,tersedia,,-4.45,rendah_ekstrem,False,-0.01,False,False,outlier_rendah_ekstrem
+94,Papua,2025,APS_7_12,97.51,persen,tersedia,,-4.66,rendah_ekstrem,False,0.42,False,False,outlier_rendah_ekstrem
+95,Papua Selatan,2025,APS_7_12,91.65,persen,tersedia,,-19.86,rendah_ekstrem,False,1.18,False,False,outlier_rendah_ekstrem
+96,Papua Tengah,2025,APS_7_12,80.13,persen,tersedia,,-49.74,rendah_ekstrem,False,5.5,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2025,APS_7_12,82.24,persen,tersedia,,-44.27,rendah_ekstrem,False,2.26,False,False,outlier_rendah_ekstrem
+34,DI Yogyakarta,2020,HLS,15.59,tahun,tersedia,,4.8,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2020,HLS,12.91,tahun,tersedia,,-0.22,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,HLS,11.08,tahun,tersedia,,-3.65,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+34,DI Yogyakarta,2021,HLS,15.64,tahun,tersedia,,4.66,tinggi_ekstrem,False,0.05,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2021,HLS,13.13,tahun,tersedia,,0.02,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,HLS,11.11,tahun,tersedia,,-3.71,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+34,DI Yogyakarta,2022,HLS,15.65,tahun,tersedia,,4.66,tinggi_ekstrem,False,0.01,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2022,HLS,13.21,tahun,tersedia,,0.08,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,HLS,11.14,tahun,tersedia,,-3.79,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+34,DI Yogyakarta,2023,HLS,15.66,tahun,tersedia,,4.0,tinggi_ekstrem,False,0.01,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2023,HLS,13.34,tahun,tersedia,,0.13,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,HLS,11.15,tahun,tersedia,,-3.51,rendah_ekstrem,True,,False,False,outlier_rendah_ekstrem;patahan_seri_pemekaran
+34,DI Yogyakarta,2024,HLS,15.7,tahun,tersedia,,3.63,tinggi_ekstrem,False,0.04,False,False,outlier_tinggi_ekstrem
+96,Papua Tengah,2024,HLS,9.63,tahun,tersedia,,-5.37,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2024,HLS,9.97,tahun,tersedia,,-4.86,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+34,DI Yogyakarta,2025,HLS,15.78,tahun,tersedia,,3.92,tinggi_ekstrem,False,0.08,False,False,outlier_tinggi_ekstrem
+96,Papua Tengah,2025,HLS,9.64,tahun,tersedia,,-5.94,rendah_ekstrem,False,0.01,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2025,HLS,9.98,tahun,tersedia,,-5.4,rendah_ekstrem,False,0.01,False,False,outlier_rendah_ekstrem
+34,DI Yogyakarta,2026,HLS,15.98,tahun,tersedia,,4.45,tinggi_ekstrem,False,0.2,False,False,outlier_tinggi_ekstrem
+96,Papua Tengah,2026,HLS,9.65,tahun,tersedia,,-6.36,rendah_ekstrem,False,0.01,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2026,HLS,9.99,tahun,tersedia,,-5.78,rendah_ekstrem,False,0.01,False,False,outlier_rendah_ekstrem
+31,DKI Jakarta,2022,IPM,82.77,indeks,tersedia,,4.24,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+34,DI Yogyakarta,2022,IPM,80.65,indeks,tersedia,,3.33,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+96,Papua Tengah,2022,IPM,58.76,indeks,tersedia,,-6.14,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2022,IPM,52.69,indeks,tersedia,,-8.76,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+31,DKI Jakarta,2023,IPM,83.55,indeks,tersedia,,4.42,tinggi_ekstrem,False,0.78,False,False,outlier_tinggi_ekstrem
+34,DI Yogyakarta,2023,IPM,81.09,indeks,tersedia,,3.33,tinggi_moderat,False,0.44,False,False,outlier_tinggi_moderat
+96,Papua Tengah,2023,IPM,59.44,indeks,tersedia,,-6.25,rendah_ekstrem,False,0.68,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2023,IPM,53.45,indeks,tersedia,,-8.89,rendah_ekstrem,False,0.76,False,False,outlier_rendah_ekstrem
+31,DKI Jakarta,2024,IPM,84.15,indeks,tersedia,,4.13,tinggi_ekstrem,False,0.6,False,False,outlier_tinggi_ekstrem
+34,DI Yogyakarta,2024,IPM,81.62,indeks,tersedia,,3.09,tinggi_moderat,False,0.53,False,False,outlier_tinggi_moderat
+96,Papua Tengah,2024,IPM,60.25,indeks,tersedia,,-5.67,rendah_ekstrem,False,0.81,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2024,IPM,54.43,indeks,tersedia,,-8.06,rendah_ekstrem,False,0.98,False,False,outlier_rendah_ekstrem
+31,DKI Jakarta,2025,IPM,85.05,indeks,tersedia,,4.37,tinggi_ekstrem,False,0.9,False,False,outlier_tinggi_ekstrem
+34,DI Yogyakarta,2025,IPM,82.48,indeks,tersedia,,3.27,tinggi_moderat,False,0.86,False,False,outlier_tinggi_moderat
+96,Papua Tengah,2025,IPM,60.64,indeks,tersedia,,-6.05,rendah_ekstrem,False,0.39,False,False,outlier_rendah_ekstrem
+97,Papua Pegunungan,2025,IPM,54.91,indeks,tersedia,,-8.5,rendah_ekstrem,False,0.48,False,False,outlier_rendah_ekstrem
+91,Papua Barat,2020,MISKIN,21.37,persen,tersedia,,2.68,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,MISKIN,26.64,persen,tersedia,,3.8,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+91,Papua Barat,2021,MISKIN,21.84,persen,tersedia,,2.64,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,MISKIN,26.86,persen,tersedia,,3.66,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+91,Papua Barat,2022,MISKIN,21.33,persen,tersedia,,2.95,tinggi_moderat,True,,False,False,outlier_tinggi_moderat;patahan_seri_pemekaran
+94,Papua,2022,MISKIN,26.56,persen,tersedia,,4.15,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+91,Papua Barat,2023,MISKIN,20.49,persen,tersedia,,2.84,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,MISKIN,26.03,persen,tersedia,,4.14,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+96,Papua Tengah,2024,MISKIN,29.76,persen,tersedia,,3.35,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+97,Papua Pegunungan,2024,MISKIN,32.97,persen,tersedia,,3.9,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+96,Papua Tengah,2025,MISKIN,28.9,persen,tersedia,,3.52,tinggi_ekstrem,False,-0.86,False,False,outlier_tinggi_ekstrem
+97,Papua Pegunungan,2025,MISKIN,30.03,persen,tersedia,,3.73,tinggi_ekstrem,False,-2.94,False,False,outlier_tinggi_ekstrem
+96,Papua Tengah,2026,MISKIN,30.41,persen,tersedia,,4.28,tinggi_ekstrem,False,1.51,False,False,outlier_tinggi_ekstrem
+97,Papua Pegunungan,2026,MISKIN,26.34,persen,tersedia,,3.46,tinggi_moderat,False,-3.69,False,False,outlier_tinggi_moderat
+53,Nusa Tenggara Timur,2020,MISKIN_DESA,24.73,persen,tersedia,,2.65,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+81,Maluku,2020,MISKIN_DESA,26.21,persen,tersedia,,2.94,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+91,Papua Barat,2020,MISKIN_DESA,32.7,persen,tersedia,,4.22,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+94,Papua,2020,MISKIN_DESA,35.5,persen,tersedia,,4.77,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+53,Nusa Tenggara Timur,2021,MISKIN_DESA,25.08,persen,tersedia,,2.84,tinggi_moderat,False,0.35,False,False,outlier_tinggi_moderat
+75,Gorontalo,2021,MISKIN_DESA,24.47,persen,tersedia,,2.71,tinggi_moderat,False,1.02,False,False,outlier_tinggi_moderat
+81,Maluku,2021,MISKIN_DESA,26.96,persen,tersedia,,3.24,tinggi_moderat,False,0.75,False,False,outlier_tinggi_moderat
+91,Papua Barat,2021,MISKIN_DESA,33.4,persen,tersedia,,4.61,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+94,Papua,2021,MISKIN_DESA,35.71,persen,tersedia,,5.1,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+53,Nusa Tenggara Timur,2022,MISKIN_DESA,23.86,persen,tersedia,,2.31,tinggi_moderat,False,-1.22,False,False,outlier_tinggi_moderat
+75,Gorontalo,2022,MISKIN_DESA,24.42,persen,tersedia,,2.42,tinggi_moderat,False,-0.05,False,False,outlier_tinggi_moderat
+81,Maluku,2022,MISKIN_DESA,23.5,persen,tersedia,,2.24,tinggi_moderat,False,-3.46,False,False,outlier_tinggi_moderat
+91,Papua Barat,2022,MISKIN_DESA,31.42,persen,tersedia,,3.74,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+94,Papua,2022,MISKIN_DESA,35.39,persen,tersedia,,4.49,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+81,Maluku,2023,MISKIN_DESA,24.64,persen,tersedia,,2.27,tinggi_moderat,False,1.14,False,False,outlier_tinggi_moderat
+91,Papua Barat,2023,MISKIN_DESA,29.2,persen,tersedia,,3.08,tinggi_moderat,True,,False,False,outlier_tinggi_moderat;patahan_seri_pemekaran
+94,Papua,2023,MISKIN_DESA,34.49,persen,tersedia,,4.02,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+94,Papua,2024,MISKIN_DESA,33.67,persen,tersedia,,3.51,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+96,Papua Tengah,2024,MISKIN_DESA,37.98,persen,tersedia,,4.2,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+97,Papua Pegunungan,2024,MISKIN_DESA,34.21,persen,tersedia,,3.6,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+65,Kalimantan Utara,2025,MISKIN_DESA,5.98,persen,tersedia,,-0.78,,False,-3.25,True,False,lonjakan_antartahun
+91,Papua Barat,2025,MISKIN_DESA,25.88,persen,tersedia,,2.69,tinggi_moderat,False,-1.8,False,False,outlier_tinggi_moderat
+92,Papua Barat Daya,2025,MISKIN_DESA,29.71,persen,tersedia,,3.36,tinggi_moderat,False,1.93,False,False,outlier_tinggi_moderat
+94,Papua,2025,MISKIN_DESA,38.47,persen,tersedia,,4.88,tinggi_ekstrem,False,4.8,False,False,outlier_tinggi_ekstrem
+95,Papua Selatan,2025,MISKIN_DESA,28.86,persen,tersedia,,3.21,tinggi_moderat,False,3.22,False,False,outlier_tinggi_moderat
+96,Papua Tengah,2025,MISKIN_DESA,36.54,persen,tersedia,,4.55,tinggi_ekstrem,False,-1.44,False,False,outlier_tinggi_ekstrem
+97,Papua Pegunungan,2025,MISKIN_DESA,31.36,persen,tersedia,,3.64,tinggi_ekstrem,False,-2.85,False,False,outlier_tinggi_ekstrem
+92,Papua Barat Daya,2026,MISKIN_DESA,30.18,persen,tersedia,,3.97,tinggi_ekstrem,False,0.47,False,False,outlier_tinggi_ekstrem
+94,Papua,2026,MISKIN_DESA,38.19,persen,tersedia,,5.55,tinggi_ekstrem,False,-0.28,False,False,outlier_tinggi_ekstrem
+96,Papua Tengah,2026,MISKIN_DESA,39.37,persen,tersedia,,5.78,tinggi_ekstrem,False,2.83,False,False,outlier_tinggi_ekstrem
+97,Papua Pegunungan,2026,MISKIN_DESA,27.95,persen,tersedia,,3.52,tinggi_ekstrem,False,-3.41,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2020,MISKIN_KOTA,5.85,persen,tersedia,,-0.05,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,MISKIN_KOTA,4.47,persen,tersedia,,-0.59,,True,,False,False,patahan_seri_pemekaran
+91,Papua Barat,2021,MISKIN_KOTA,6.5,persen,tersedia,,0.04,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,MISKIN_KOTA,4.91,persen,tersedia,,-0.54,,True,,False,False,patahan_seri_pemekaran
+17,Bengkulu,2022,MISKIN_KOTA,14.88,persen,tersedia,,3.63,tinggi_moderat,False,-0.22,False,False,outlier_tinggi_moderat
+91,Papua Barat,2022,MISKIN_KOTA,6.96,persen,tersedia,,0.36,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,MISKIN_KOTA,5.02,persen,tersedia,,-0.44,,True,,False,False,patahan_seri_pemekaran
+91,Papua Barat,2023,MISKIN_KOTA,8.23,persen,tersedia,,0.65,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,MISKIN_KOTA,5.68,persen,tersedia,,-0.3,,True,,False,False,patahan_seri_pemekaran
+97,Papua Pegunungan,2024,MISKIN_KOTA,16.56,persen,tersedia,,3.38,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+97,Papua Pegunungan,2025,MISKIN_KOTA,13.0,persen,tersedia,,2.39,,False,-3.56,True,False,lonjakan_antartahun
+97,Papua Pegunungan,2026,MISKIN_KOTA,16.72,persen,tersedia,,3.83,tinggi_ekstrem,False,3.72,True,False,outlier_tinggi_ekstrem;lonjakan_antartahun
+91,Papua Barat,2020,MISKIN_SEP,21.7,persen,tersedia,,2.57,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,MISKIN_SEP,26.8,persen,tersedia,,3.61,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+91,Papua Barat,2021,MISKIN_SEP,21.82,persen,tersedia,,2.73,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,MISKIN_SEP,27.38,persen,tersedia,,3.87,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+91,Papua Barat,2022,MISKIN_SEP,21.43,persen,tersedia,,2.94,tinggi_moderat,True,,False,False,outlier_tinggi_moderat;patahan_seri_pemekaran
+94,Papua,2022,MISKIN_SEP,26.8,persen,tersedia,,4.16,tinggi_ekstrem,True,,False,False,outlier_tinggi_ekstrem;patahan_seri_pemekaran
+96,Papua Tengah,2024,MISKIN_SEP,27.6,persen,tersedia,,3.28,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+97,Papua Pegunungan,2024,MISKIN_SEP,29.66,persen,tersedia,,3.66,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+96,Papua Tengah,2025,MISKIN_SEP,29.45,persen,tersedia,,3.8,tinggi_ekstrem,False,1.85,False,False,outlier_tinggi_ekstrem
+97,Papua Pegunungan,2025,MISKIN_SEP,27.21,persen,tersedia,,3.38,tinggi_moderat,False,-2.45,False,False,outlier_tinggi_moderat
+34,DI Yogyakarta,2020,NEET,12.71,persen,tersedia,,-3.56,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+51,Bali,2020,NEET,14.9,persen,tersedia,,-2.84,rendah_moderat,False,,False,False,outlier_rendah_moderat
+91,Papua Barat,2020,NEET,24.01,persen,tersedia,,0.18,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,NEET,20.92,persen,tersedia,,-0.84,,True,,False,False,patahan_seri_pemekaran
+34,DI Yogyakarta,2021,NEET,9.89,persen,tersedia,,-3.92,rendah_ekstrem,False,-2.82,False,False,outlier_rendah_ekstrem
+91,Papua Barat,2021,NEET,21.97,persen,tersedia,,0.03,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,NEET,18.51,persen,tersedia,,-1.1,,True,,False,False,patahan_seri_pemekaran
+34,DI Yogyakarta,2022,NEET,10.7,persen,tersedia,,-3.26,rendah_moderat,False,0.81,False,False,outlier_rendah_moderat
+51,Bali,2022,NEET,11.32,persen,tersedia,,-3.09,rendah_moderat,False,-3.2,False,False,outlier_rendah_moderat
+91,Papua Barat,2022,NEET,26.29,persen,tersedia,,1.0,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,NEET,20.07,persen,tersedia,,-0.7,,True,,False,False,patahan_seri_pemekaran
+34,DI Yogyakarta,2023,NEET,10.89,persen,tersedia,,-3.2,rendah_moderat,False,0.19,False,False,outlier_rendah_moderat
+51,Bali,2023,NEET,10.03,persen,tersedia,,-3.44,rendah_moderat,False,-1.29,False,False,outlier_rendah_moderat
+81,Maluku,2023,NEET,35.38,persen,tersedia,,3.7,tinggi_ekstrem,False,4.49,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2023,NEET,27.98,persen,tersedia,,1.61,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,NEET,25.06,persen,tersedia,,0.79,,True,,False,False,patahan_seri_pemekaran
+51,Bali,2024,NEET,7.26,persen,tersedia,,-3.58,rendah_ekstrem,False,-2.77,False,False,outlier_rendah_ekstrem
+51,Bali,2025,NEET,5.33,persen,tersedia,,-3.81,rendah_ekstrem,False,-1.93,False,False,outlier_rendah_ekstrem
+96,Papua Tengah,2025,NEET,21.18,persen,tersedia,,0.5,,False,-10.02,True,False,lonjakan_antartahun
+21,Kepulauan Riau,2020,PEKERJA_FORMAL,64.59,persen,tersedia,,3.66,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+31,DKI Jakarta,2020,PEKERJA_FORMAL,61.78,persen,tersedia,,3.28,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+91,Papua Barat,2020,PEKERJA_FORMAL,42.02,persen,tersedia,,0.6,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,PEKERJA_FORMAL,20.08,persen,tersedia,,-2.37,,True,,False,False,patahan_seri_pemekaran
+21,Kepulauan Riau,2021,PEKERJA_FORMAL,64.8,persen,tersedia,,3.72,tinggi_ekstrem,False,0.21,False,False,outlier_tinggi_ekstrem
+31,DKI Jakarta,2021,PEKERJA_FORMAL,61.74,persen,tersedia,,3.28,tinggi_moderat,False,-0.04,False,False,outlier_tinggi_moderat
+91,Papua Barat,2021,PEKERJA_FORMAL,42.08,persen,tersedia,,0.42,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,PEKERJA_FORMAL,19.53,persen,tersedia,,-2.86,rendah_moderat,True,,False,False,outlier_rendah_moderat;patahan_seri_pemekaran
+91,Papua Barat,2022,PEKERJA_FORMAL,39.72,persen,tersedia,,-0.01,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,PEKERJA_FORMAL,15.89,persen,tersedia,,-2.73,rendah_moderat,True,,False,False,outlier_rendah_moderat;patahan_seri_pemekaran
+21,Kepulauan Riau,2023,PEKERJA_FORMAL,66.33,persen,tersedia,,2.87,tinggi_moderat,False,2.65,False,False,outlier_tinggi_moderat
+91,Papua Barat,2023,PEKERJA_FORMAL,41.45,persen,tersedia,,0.14,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,PEKERJA_FORMAL,15.57,persen,tersedia,,-2.7,rendah_moderat,True,,False,False,outlier_rendah_moderat;patahan_seri_pemekaran
+21,Kepulauan Riau,2024,PEKERJA_FORMAL,68.45,persen,tersedia,,3.29,tinggi_moderat,False,2.12,False,False,outlier_tinggi_moderat
+96,Papua Tengah,2024,PEKERJA_FORMAL,12.98,persen,tersedia,,-3.15,rendah_moderat,False,,False,False,outlier_rendah_moderat
+97,Papua Pegunungan,2024,PEKERJA_FORMAL,4.24,persen,tersedia,,-4.16,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+21,Kepulauan Riau,2025,PEKERJA_FORMAL,65.75,persen,tersedia,,3.06,tinggi_moderat,False,-2.7,False,False,outlier_tinggi_moderat
+96,Papua Tengah,2025,PEKERJA_FORMAL,15.28,persen,tersedia,,-3.02,rendah_moderat,False,2.3,False,False,outlier_rendah_moderat
+97,Papua Pegunungan,2025,PEKERJA_FORMAL,4.7,persen,tersedia,,-4.3,rendah_ekstrem,False,0.46,False,False,outlier_rendah_ekstrem
+31,DKI Jakarta,2020,PENGELUARAN,18227.0,ribu rupiah/orang/tahun,tersedia,,4.34,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2020,PENGELUARAN,8086.0,ribu rupiah/orang/tahun,tersedia,,-1.38,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,PENGELUARAN,6954.0,ribu rupiah/orang/tahun,tersedia,,-2.02,,True,,False,False,patahan_seri_pemekaran
+31,DKI Jakarta,2021,PENGELUARAN,18520.0,ribu rupiah/orang/tahun,tersedia,,4.28,tinggi_ekstrem,False,293.0,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2021,PENGELUARAN,7929.0,ribu rupiah/orang/tahun,tersedia,,-1.46,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,PENGELUARAN,6955.0,ribu rupiah/orang/tahun,tersedia,,-1.99,,True,,False,False,patahan_seri_pemekaran
+31,DKI Jakarta,2022,PENGELUARAN,18927.0,ribu rupiah/orang/tahun,tersedia,,4.27,tinggi_ekstrem,False,407.0,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2022,PENGELUARAN,8101.0,ribu rupiah/orang/tahun,tersedia,,-1.55,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,PENGELUARAN,7146.0,ribu rupiah/orang/tahun,tersedia,,-2.07,,True,,False,False,patahan_seri_pemekaran
+31,DKI Jakarta,2023,PENGELUARAN,19373.0,ribu rupiah/orang/tahun,tersedia,,4.74,tinggi_ekstrem,False,446.0,False,False,outlier_tinggi_ekstrem
+91,Papua Barat,2023,PENGELUARAN,8404.0,ribu rupiah/orang/tahun,tersedia,,-1.68,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,PENGELUARAN,7562.0,ribu rupiah/orang/tahun,tersedia,,-2.17,,True,,False,False,patahan_seri_pemekaran
+21,Kepulauan Riau,2024,PENGELUARAN,15573.0,ribu rupiah/orang/tahun,tersedia,,2.11,tinggi_moderat,False,575.0,False,False,outlier_tinggi_moderat
+31,DKI Jakarta,2024,PENGELUARAN,19953.0,ribu rupiah/orang/tahun,tersedia,,4.44,tinggi_ekstrem,False,580.0,False,False,outlier_tinggi_ekstrem
+97,Papua Pegunungan,2024,PENGELUARAN,5707.0,ribu rupiah/orang/tahun,tersedia,,-3.15,rendah_moderat,False,,False,False,outlier_rendah_moderat
+31,DKI Jakarta,2025,PENGELUARAN,20676.0,ribu rupiah/orang/tahun,tersedia,,4.35,tinggi_ekstrem,False,723.0,False,False,outlier_tinggi_ekstrem
+97,Papua Pegunungan,2025,PENGELUARAN,5861.0,ribu rupiah/orang/tahun,tersedia,,-3.06,rendah_moderat,False,154.0,False,False,outlier_rendah_moderat
+31,DKI Jakarta,2026,PENGELUARAN,21431.0,ribu rupiah/orang/tahun,tersedia,,4.34,tinggi_ekstrem,False,755.0,False,False,outlier_tinggi_ekstrem
+97,Papua Pegunungan,2026,PENGELUARAN,6002.0,ribu rupiah/orang/tahun,tersedia,,-3.08,rendah_moderat,False,141.0,False,False,outlier_rendah_moderat
+31,DKI Jakarta,2020,RLS,11.13,tahun,tersedia,,2.49,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+91,Papua Barat,2020,RLS,7.6,tahun,tersedia,,-1.14,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,RLS,6.69,tahun,tersedia,,-2.08,,True,,False,False,patahan_seri_pemekaran
+31,DKI Jakarta,2021,RLS,11.17,tahun,tersedia,,2.41,tinggi_moderat,False,0.04,False,False,outlier_tinggi_moderat
+91,Papua Barat,2021,RLS,7.69,tahun,tersedia,,-1.06,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,RLS,6.76,tahun,tersedia,,-1.99,,True,,False,False,patahan_seri_pemekaran
+31,DKI Jakarta,2022,RLS,11.31,tahun,tersedia,,2.42,tinggi_moderat,False,0.14,False,False,outlier_tinggi_moderat
+91,Papua Barat,2022,RLS,7.84,tahun,tersedia,,-0.97,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,RLS,7.02,tahun,tersedia,,-1.77,,True,,False,False,patahan_seri_pemekaran
+31,DKI Jakarta,2023,RLS,11.45,tahun,tersedia,,2.65,tinggi_moderat,False,0.14,False,False,outlier_tinggi_moderat
+91,Papua Barat,2023,RLS,7.93,tahun,tersedia,,-1.0,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,RLS,7.15,tahun,tersedia,,-1.81,,True,,False,False,patahan_seri_pemekaran
+31,DKI Jakarta,2024,RLS,11.49,tahun,tersedia,,2.93,tinggi_moderat,False,0.04,False,False,outlier_tinggi_moderat
+96,Papua Tengah,2024,RLS,6.12,tahun,tersedia,,-3.11,rendah_moderat,False,,False,False,outlier_rendah_moderat
+97,Papua Pegunungan,2024,RLS,4.21,tahun,tersedia,,-5.26,rendah_ekstrem,False,,False,False,outlier_rendah_ekstrem
+96,Papua Tengah,2025,RLS,6.13,tahun,tersedia,,-2.88,rendah_moderat,False,0.01,False,False,outlier_rendah_moderat
+97,Papua Pegunungan,2025,RLS,4.3,tahun,tersedia,,-4.68,rendah_ekstrem,False,0.09,False,False,outlier_rendah_ekstrem
+96,Papua Tengah,2026,RLS,6.14,tahun,tersedia,,-2.93,rendah_moderat,False,0.01,False,False,outlier_rendah_moderat
+97,Papua Pegunungan,2026,RLS,4.31,tahun,tersedia,,-4.66,rendah_ekstrem,False,0.01,False,False,outlier_rendah_ekstrem
+91,Papua Barat,2020,TPAK,69.55,persen,tersedia,,0.28,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,TPAK,72.16,persen,tersedia,,1.09,,True,,False,False,patahan_seri_pemekaran
+91,Papua Barat,2021,TPAK,70.34,persen,tersedia,,0.55,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,TPAK,78.29,persen,tersedia,,3.03,tinggi_moderat,True,,False,False,outlier_tinggi_moderat;patahan_seri_pemekaran
+51,Bali,2022,TPAK,76.86,persen,tersedia,,2.67,tinggi_moderat,False,3.32,False,False,outlier_tinggi_moderat
+91,Papua Barat,2022,TPAK,68.55,persen,tersedia,,-0.11,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,TPAK,77.75,persen,tersedia,,2.97,tinggi_moderat,True,,False,False,outlier_tinggi_moderat;patahan_seri_pemekaran
+91,Papua Barat,2023,TPAK,67.24,persen,tersedia,,-0.74,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,TPAK,77.2,persen,tersedia,,2.26,,True,,False,False,patahan_seri_pemekaran
+53,Nusa Tenggara Timur,2024,TPAK,77.5,persen,tersedia,,2.2,tinggi_moderat,False,1.78,False,False,outlier_tinggi_moderat
+97,Papua Pegunungan,2024,TPAK,88.22,persen,tersedia,,5.48,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+97,Papua Pegunungan,2025,TPAK,90.66,persen,tersedia,,5.79,tinggi_ekstrem,False,2.44,False,False,outlier_tinggi_ekstrem
+21,Kepulauan Riau,2020,TPT,10.34,persen,tersedia,,2.86,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+31,DKI Jakarta,2020,TPT,10.95,persen,tersedia,,3.23,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+32,Jawa Barat,2020,TPT,10.46,persen,tersedia,,2.93,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+36,Banten,2020,TPT,10.64,persen,tersedia,,3.04,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+91,Papua Barat,2020,TPT,6.8,persen,tersedia,,0.74,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,TPT,4.28,persen,tersedia,,-0.77,,True,,False,False,patahan_seri_pemekaran
+14,Riau,2021,TPT,4.42,persen,tersedia,,-0.36,,False,-1.9,True,False,lonjakan_antartahun
+21,Kepulauan Riau,2021,TPT,9.91,persen,tersedia,,2.75,tinggi_moderat,False,-0.43,False,False,outlier_tinggi_moderat
+31,DKI Jakarta,2021,TPT,8.5,persen,tersedia,,1.95,,False,-2.45,True,False,lonjakan_antartahun
+32,Jawa Barat,2021,TPT,9.82,persen,tersedia,,2.7,tinggi_moderat,False,-0.64,False,False,outlier_tinggi_moderat
+91,Papua Barat,2021,TPT,5.84,persen,tersedia,,0.44,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,TPT,3.33,persen,tersedia,,-0.98,,True,,False,False,patahan_seri_pemekaran
+91,Papua Barat,2022,TPT,5.37,persen,tersedia,,0.44,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,TPT,2.83,persen,tersedia,,-1.18,,True,,False,False,patahan_seri_pemekaran
+51,Bali,2023,TPT,2.69,persen,tersedia,,-0.99,,False,-2.11,True,False,lonjakan_antartahun
+91,Papua Barat,2023,TPT,5.38,persen,tersedia,,0.64,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,TPT,2.67,persen,tersedia,,-1.0,,True,,False,False,patahan_seri_pemekaran
+91,Papua Barat,2020,TPT_FEB,6.78,persen,tersedia,,1.62,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2020,TPT_FEB,3.42,persen,tersedia,,-0.51,,True,,False,False,patahan_seri_pemekaran
+21,Kepulauan Riau,2021,TPT_FEB,10.12,persen,tersedia,,3.44,tinggi_moderat,False,4.14,True,False,outlier_tinggi_moderat;lonjakan_antartahun
+31,DKI Jakarta,2021,TPT_FEB,8.51,persen,tersedia,,2.34,,False,3.36,True,False,lonjakan_antartahun
+51,Bali,2021,TPT_FEB,5.42,persen,tersedia,,0.21,,False,4.17,True,False,lonjakan_antartahun
+65,Kalimantan Utara,2021,TPT_FEB,4.67,persen,tersedia,,-0.31,,False,-1.04,True,False,lonjakan_antartahun
+91,Papua Barat,2021,TPT_FEB,6.18,persen,tersedia,,0.73,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2021,TPT_FEB,3.77,persen,tersedia,,-0.93,,True,,False,False,patahan_seri_pemekaran
+21,Kepulauan Riau,2022,TPT_FEB,8.02,persen,tersedia,,2.21,,False,-2.1,True,False,lonjakan_antartahun
+91,Papua Barat,2022,TPT_FEB,5.78,persen,tersedia,,0.68,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2022,TPT_FEB,3.6,persen,tersedia,,-0.8,,True,,False,False,patahan_seri_pemekaran
+91,Papua Barat,2023,TPT_FEB,5.53,persen,tersedia,,0.9,,True,,False,False,patahan_seri_pemekaran
+94,Papua,2023,TPT_FEB,3.49,persen,tersedia,,-0.74,,True,,False,False,patahan_seri_pemekaran
+51,Bali,2024,TPT_FEB,1.87,persen,tersedia,,-1.59,,False,-1.86,True,False,lonjakan_antartahun
+76,Sulawesi Barat,2024,TPT_FEB,3.02,persen,tersedia,RSE 25-50% (estimasi kurang andal),-0.78,,False,-0.02,False,False,rse_tinggi
+95,Papua Selatan,2024,TPT_FEB,4.75,persen,tersedia,RSE 25-50% (estimasi kurang andal),0.43,,False,,False,False,rse_tinggi
+97,Papua Pegunungan,2024,TPT_FEB,1.18,persen,tersedia,RSE 25-50% (estimasi kurang andal),-2.07,,False,,False,False,rse_tinggi

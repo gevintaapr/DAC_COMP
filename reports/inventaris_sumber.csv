@@ -1,0 +1,66 @@
+sumber_id,file,baris_diambil,sha256
+rls,"Dataset/Rata Lama Sekolah/[Metode Baru] Rata-rata Lama Sekolah, 2020.csv",39,3cfe7f3fb983bcb987b53c38513cbfb96b1fffb516cdd73e775c73aa9b5574bf
+rls,"Dataset/Rata Lama Sekolah/[Metode Baru] Rata-rata Lama Sekolah, 2021.csv",39,e418101aa3f4638b63db73df0b03b2551c86470a7a65b6a06aee387c839a25ea
+rls,"Dataset/Rata Lama Sekolah/[Metode Baru] Rata-rata Lama Sekolah, 2022.csv",39,019a379f6bac08103b00c330dd79ad329bd41ba9f43071ff84310feac8b3d56c
+rls,"Dataset/Rata Lama Sekolah/[Metode Baru] Rata-rata Lama Sekolah, 2023.csv",39,4ff1925f3cb9c155334b5f4082d0c2b1df3521e8bcf11b0279d728c14d96430d
+rls,"Dataset/Rata Lama Sekolah/[Metode Baru] Rata-rata Lama Sekolah, 2024.csv",39,d8bc8aaf34281935a4ce9c5e724e3aa97b37e412f66cca328d1f3bd141577441
+rls,"Dataset/Rata Lama Sekolah/[Metode Baru] Rata-rata Lama Sekolah, 2025.csv",39,5f5ca2d73e62dc135fc5cc2cb37d9db04c2d1260b74661ebef97b1be391c264f
+rls,"Dataset/Rata Lama Sekolah/[Metode Baru] Rata-rata Lama Sekolah, 2026.csv",39,70367f0e6dbcd91aabe407810c2ed60a056f2e90b5b739d14abd578f11408fe3
+hls,"Dataset/Harapan Lama Sekolah/[Metode Baru] Harapan Lama Sekolah, 2020.csv",39,bfc1c96d9d7e95aeb9a7df60d8e95567f5c76bc3a2f324f9216e0157b75763e6
+hls,"Dataset/Harapan Lama Sekolah/[Metode Baru] Harapan Lama Sekolah, 2021.csv",39,33471248c9b1a2d9f69b56046fed7ace35e5ca8f3c34e4014cdefa0f1722ec4c
+hls,"Dataset/Harapan Lama Sekolah/[Metode Baru] Harapan Lama Sekolah, 2022.csv",39,19a93d0c90d468f95e4018143ee4d3ed8fedb84ba0e91b294f3963151da65f9d
+hls,"Dataset/Harapan Lama Sekolah/[Metode Baru] Harapan Lama Sekolah, 2023.csv",39,124eef7ae7fcb39219ca53b69cf02eb97d2ca2ca1a50e7fb3d1d3dd4054586eb
+hls,"Dataset/Harapan Lama Sekolah/[Metode Baru] Harapan Lama Sekolah, 2024.csv",39,b2bb73f2af58240c425441db6977e215eeb8b9ed9dff90fa1d196fe35a933259
+hls,"Dataset/Harapan Lama Sekolah/[Metode Baru] Harapan Lama Sekolah, 2025.csv",39,4324c9d378a34930b7828d74251aa4190133b5beba2285b14f47c2a6854a400b
+hls,"Dataset/Harapan Lama Sekolah/[Metode Baru] Harapan Lama Sekolah, 2026.csv",39,8e7e751ecd9379e5377222a79212217c851c964da42d77e4d9b6ca68e7bf2491
+pengeluaran,"Dataset/Pengeluaran Per Kapita/[Metode Baru] Pengeluaran per Kapita Disesuaikan, 2020.csv",39,62548d5f1e5ee7e16dba567942dd7a6b3036665f04a5e50d29b4fa092de5abe1
+pengeluaran,"Dataset/Pengeluaran Per Kapita/[Metode Baru] Pengeluaran per Kapita Disesuaikan, 2021.csv",39,9bdf276d672fe626785f2b5f11f99f80a03e7b30f6bb8de81116f945652b06ef
+pengeluaran,"Dataset/Pengeluaran Per Kapita/[Metode Baru] Pengeluaran per Kapita Disesuaikan, 2022.csv",39,54efad9b328ef07de7715376359e88c0d2d7d0d82bd70b815acc0d7270109079
+pengeluaran,"Dataset/Pengeluaran Per Kapita/[Metode Baru] Pengeluaran per Kapita Disesuaikan, 2023.csv",39,afe5e821ae410074f1433561a99d469edbf203765dfe097b0f8590148b5eff91
+pengeluaran,"Dataset/Pengeluaran Per Kapita/[Metode Baru] Pengeluaran per Kapita Disesuaikan, 2024.csv",39,d95119696dcc2522a6b4c7c3b5335fb87e9245bdff8700274a4182afd7baa6c8
+pengeluaran,"Dataset/Pengeluaran Per Kapita/[Metode Baru] Pengeluaran per Kapita Disesuaikan, 2025.csv",39,5e2ebb35a1c8762bd3a2919206ca72087a86cce21f20d00b7f7c61c2e934ea95
+pengeluaran,"Dataset/Pengeluaran Per Kapita/[Metode Baru] Pengeluaran per Kapita Disesuaikan, 2026.csv",39,8b6b4a087619fcea3cc636133c0d51ac8aa5e5ee003844dd1350417a2d5e503e
+aps,"Dataset/Angka Partisipasi Sekolah/Angka Partisipasi Sekolah (APS) Menurut Provinsi dan Kelompok Umur, 2020.csv",156,f0630d8a8deb528fd766de3f48ae8fb5ec32c6f9f777a3718a5db5bfac8b6763
+aps,"Dataset/Angka Partisipasi Sekolah/Angka Partisipasi Sekolah (APS) Menurut Provinsi dan Kelompok Umur, 2021.csv",156,088303a3069ac71786e49782b8d8d77389e7ac0e3bf2c1518ae7f069967e268d
+aps,"Dataset/Angka Partisipasi Sekolah/Angka Partisipasi Sekolah (APS) Menurut Provinsi dan Kelompok Umur, 2022.csv",156,9f11bda0f4b34a9035a3fb824fcf91f7e407f2498e1a632244466e183b040fb4
+aps,"Dataset/Angka Partisipasi Sekolah/Angka Partisipasi Sekolah (APS) Menurut Provinsi dan Kelompok Umur, 2023.csv",156,b1ecd96f07f698fc362d7f2eb5db2e102a294f4c408f23bd2c408546155e3990
+aps,"Dataset/Angka Partisipasi Sekolah/Angka Partisipasi Sekolah (APS) Menurut Provinsi dan Kelompok Umur, 2024.csv",156,02a607bb9e97539c99e00d101c538c31e0dd558962cba38342997176406cda7e
+aps,"Dataset/Angka Partisipasi Sekolah/Angka Partisipasi Sekolah (APS) Menurut Provinsi dan Kelompok Umur, 2025.csv",156,1f8599571e292273329d1d18d691eedec7122a1570be563658e269ca386a8e5c
+neet,"Dataset/NEET/Percentage of Youth (Aged 15-24 Years) Not in Education, Employment or Training (NEET), 2020.csv",39,251d037ba39cc0a0221d2638d69048abbd02698ab2a5777dd95f439e420348b9
+neet,"Dataset/NEET/Percentage of Youth (Aged 15-24 Years) Not in Education, Employment or Training (NEET), 2021.csv",39,19ba7b86c26629f3bc545aa0dedaa11929e35a4a666a1b754ef2be6e7641779d
+neet,"Dataset/NEET/Percentage of Youth (Aged 15-24 Years) Not in Education, Employment or Training (NEET), 2022.csv",39,ef17b592622e4da34f3ef4afee99bc1e3acd5ce5a69b3beca19e18a5599b7ffd
+neet,"Dataset/NEET/Percentage of Youth (Aged 15-24 Years) Not in Education, Employment or Training (NEET), 2023.csv",39,6333d383b409750abceda32e62da3ac97b7c9b482331b26ced20c111c8fde554
+neet,"Dataset/NEET/Percentage of Youth (Aged 15-24 Years) Not in Education, Employment or Training (NEET), 2024.csv",39,82d74743fc07c02261322d8605263c56e450683b5279e47c42311692c7714ed6
+neet,"Dataset/NEET/Percentage of Youth (Aged 15-24 Years) Not in Education, Employment or Training (NEET), 2025.csv",39,6fe313a6d9995ed40a8fb1d5739bdc2879f0f6510390c2fba1200ba6e677a67c
+formal,"Dataset/Tenaga Kerja Formal/Persentase Tenaga Kerja Formal Menurut Provinsi, 2020.csv",39,da634580a5e0cdceb2a524390cb2f6edb7e16a406497a000a0062c2024ba5a49
+formal,"Dataset/Tenaga Kerja Formal/Persentase Tenaga Kerja Formal Menurut Provinsi, 2021.csv",39,394be36d2bb1f327b8a1ec04e61fccb1483a121cea9a8d0eaf733ba173723986
+formal,"Dataset/Tenaga Kerja Formal/Persentase Tenaga Kerja Formal Menurut Provinsi, 2022.csv",39,51c811ad125f9e1a9490ee83992c5150a5fea20fa8b139356b712c4a47e209b4
+formal,"Dataset/Tenaga Kerja Formal/Persentase Tenaga Kerja Formal Menurut Provinsi, 2023.csv",39,e7651ca56b9c65da217fd0d754075c93cc072b8fed64d3375a559528892b148e
+formal,"Dataset/Tenaga Kerja Formal/Persentase Tenaga Kerja Formal Menurut Provinsi, 2024.csv",39,d6f3d2b53c56b914c6b30c8aab05ae9ba98204ca18425213a1e116796a489754
+formal,"Dataset/Tenaga Kerja Formal/Persentase Tenaga Kerja Formal Menurut Provinsi, 2025.csv",39,408bd7633abf0c2daeae190ab1e731f8b9e8a5a7a254535808216241a5bc6641
+kemiskinan,"Dataset/Kemiskinan/Persentase Penduduk Miskin (P0) Menurut Provinsi dan Daerah, 2020.csv",156,0e30e270a5896aa8d0af73e7f4d791cd6ddcaabe7f8c72ee5cf289bd494e14be
+kemiskinan,"Dataset/Kemiskinan/Persentase Penduduk Miskin (P0) Menurut Provinsi dan Daerah, 2021.csv",156,fbfd5ce76f52177d8462d4440915a9b5f97619b346712a11fcf1a91006bf0b96
+kemiskinan,"Dataset/Kemiskinan/Persentase Penduduk Miskin (P0) Menurut Provinsi dan Daerah, 2022.csv",156,0fadd3aeeaf34c3e4db3365068201dabb4424cbb9d3aa010ff17bd5b1be0fd90
+kemiskinan,"Dataset/Kemiskinan/Persentase Penduduk Miskin (P0) Menurut Provinsi dan Daerah, 2023.csv",156,9ad666ca6e890bb3381ffae040eef89a5280d070c11bd6a36aa1c9e6b4cdbb08
+kemiskinan,"Dataset/Kemiskinan/Persentase Penduduk Miskin (P0) Menurut Provinsi dan Daerah, 2024.csv",156,31ce5e5bc9f624cf1f047b9a2308da92716ba2985188c7e61462b15d670958c7
+kemiskinan,"Dataset/Kemiskinan/Persentase Penduduk Miskin (P0) Menurut Provinsi dan Daerah, 2025.csv",156,25a6c8526fe87e10053fdd4e44fe156ef56faf47c6f64148a4fa1ae4de9bc121
+kemiskinan,"Dataset/Kemiskinan/Persentase Penduduk Miskin (P0) Menurut Provinsi dan Daerah, 2026.csv",156,379a99b231fb340d22099659c136b9c7f3a2330212a1b3aa8d41ee33db0dcee1
+tpt,"Dataset/TPT UMUM/Tingkat Pengangguran Terbuka (TPT) dan Tingkat Partisipasi Angkatan Kerja (TPAK) Menurut Provinsi, 2020.csv",105,310ed582110e83bdfcbc4433dc1e8d34bc5e575f6c10f7f61c61a8ddab22ef61
+tpt,"Dataset/TPT UMUM/Tingkat Pengangguran Terbuka (TPT) dan Tingkat Partisipasi Angkatan Kerja (TPAK) Menurut Provinsi, 2021.csv",105,7c58d8ede8b03b1a2e595ba34bf1ebddc645dfb6e7972a9eb035d18a3fc0114a
+tpt,"Dataset/TPT UMUM/Tingkat Pengangguran Terbuka (TPT) dan Tingkat Partisipasi Angkatan Kerja (TPAK) Menurut Provinsi, 2022.csv",105,121e01be421c56f6fb320ea2ee1c8d935ced9e56a7993081c8a956129936714a
+tpt,"Dataset/TPT UMUM/Tingkat Pengangguran Terbuka (TPT) dan Tingkat Partisipasi Angkatan Kerja (TPAK) Menurut Provinsi, 2023.csv",117,30132b36b03ecbe78c5e1f42b44f90fbd68b28baad25a9f9fc5ba76c8e78c642
+tpt,"Dataset/TPT UMUM/Tingkat Pengangguran Terbuka (TPT) dan Tingkat Partisipasi Angkatan Kerja (TPAK) Menurut Provinsi, 2024.csv",117,a5d67017e32b097f15b7bc7e4be35dc6d48659f92efada4f52fd11b39aa0e5e3
+tpt,"Dataset/TPT UMUM/Tingkat Pengangguran Terbuka (TPT) dan Tingkat Partisipasi Angkatan Kerja (TPAK) Menurut Provinsi, 2025.csv",117,8b5fc75efa69fb7cb7b94938ac50195b7be2555abedfb7a6b10addfb7d75dc8f
+ipm,Dataset/IPM/BPS0000-indeks_pembangunan_manusia_2025.pdf,156,bcbf49350cc305071307a378d512797a54f10e647289542dc2199728b88e4025
+tpt_pendidikan,"Dataset/TPT tingkat pendidikan/Tingkat Pengangguran Terbuka Berdasarkan Tingkat Pendidikan, 2020.csv",6,3c7eda6e25da62f7d84836521983c50e375f2190d61e6bdfe4027fae71ac1aa9
+tpt_pendidikan,"Dataset/TPT tingkat pendidikan/Tingkat Pengangguran Terbuka Berdasarkan Tingkat Pendidikan, 2021.csv",6,217dea546461ab959ca2b352a698432ecd17e4cb4eb740fce00d99e464c0f84f
+tpt_pendidikan,"Dataset/TPT tingkat pendidikan/Tingkat Pengangguran Terbuka Berdasarkan Tingkat Pendidikan, 2022.csv",6,57cec03e9f8f5bcf054d794dde9aef1dbae0ad1e86b0997fcc5f612c779c7694
+tpt_pendidikan,"Dataset/TPT tingkat pendidikan/Tingkat Pengangguran Terbuka Berdasarkan Tingkat Pendidikan, 2023.csv",6,329db64a2824aa5cb0c8b1ee54976e66d5fd5279a28ea5b90da06ad2bb59f260
+tpt_pendidikan,"Dataset/TPT tingkat pendidikan/Tingkat Pengangguran Terbuka Berdasarkan Tingkat Pendidikan, 2024.csv",6,7aa9b17c7901b762820b492324e18d52a23fb5a5c60e11ded2d50a03bd21cafd
+tpt_pendidikan,"Dataset/TPT tingkat pendidikan/Tingkat Pengangguran Terbuka Berdasarkan Tingkat Pendidikan, 2025.csv",6,bef76146db8d5e628c716865bc69379bce564c16409f1c85c2d333df6fe602c4
+upah_sektor,"Dataset/Upah Per Sektor/Rata-Rata Upah_Gaji, 2020.csv",36,040cdcdb65fb413383f9ac7e34b433ccf357682aed9b23ceb11ca017d14fbc54
+upah_sektor,"Dataset/Upah Per Sektor/Rata-Rata Upah_Gaji, 2021.csv",36,bee992408449d130838bb2cf04ba9162fdf0ce653252e4890b16b28b33b15601
+upah_sektor,"Dataset/Upah Per Sektor/Rata-Rata Upah_Gaji, 2022.csv",36,1733e4a3d081e1216c71cfe5e422ea72c3abe7993cb644b11fa8adfd91278b26
+upah_sektor,"Dataset/Upah Per Sektor/Rata-Rata Upah_Gaji, 2023.csv",36,2bb03ad8eb108c54ab189038a52f52916004a6b16c50f74466fa6d8647f0caef
+upah_sektor,"Dataset/Upah Per Sektor/Rata-Rata Upah_Gaji, 2024.csv",36,47435415f72293e1fcadad4d93056f925ec146476c0bc7dffe662564964d314e
+upah_sektor,"Dataset/Upah Per Sektor/Rata-Rata Upah_Gaji, 2025.csv",36,4c3871f99e6052cb8d695b72588c6ab048de26f292806c34e2a0a9063333abc0

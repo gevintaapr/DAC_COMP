@@ -1,0 +1,136 @@
+# Daftar sumber data mentah dan cara membacanya.
+# reader:
+#   bps_kolom   -> tabel ekspor BPS: beberapa baris judul, lalu satu baris per wilayah.
+#                  `kolom` memetakan indeks kolom -> kode indikator.
+#                  `cek_header` memastikan format file tidak berubah (baris, kolom, teks yang diharapkan).
+#   ipm_pdf     -> tabel lampiran publikasi IPM (PDF)
+#   nasional    -> tabel nasional (baris = kategori, bukan provinsi)
+# hanya_provinsi: true -> file berisi kabupaten/kota; hanya baris provinsi (huruf kapital) yang diambil.
+# wajib: false -> jika folder belum ada, sumber dilewati dengan peringatan.
+
+provinsi:
+  - id: rls
+    folder: Rata Lama Sekolah
+    pola: "*.csv"
+    reader: bps_kolom
+    baris_data_mulai: 3
+    hanya_provinsi: true
+    kolom: {1: RLS}
+    cek_header: [[1, 1, "Rata-rata Lama Sekolah"]]
+    sumber: "BPS, [Metode Baru] Rata-rata Lama Sekolah"
+
+  - id: hls
+    folder: Harapan Lama Sekolah
+    pola: "*.csv"
+    reader: bps_kolom
+    baris_data_mulai: 3
+    hanya_provinsi: true
+    kolom: {1: HLS}
+    cek_header: [[1, 1, "Harapan Lama Sekolah"]]
+    sumber: "BPS, [Metode Baru] Harapan Lama Sekolah"
+
+  - id: pengeluaran
+    folder: Pengeluaran Per Kapita
+    pola: "*.csv"
+    reader: bps_kolom
+    baris_data_mulai: 3
+    hanya_provinsi: true
+    kolom: {1: PENGELUARAN}
+    cek_header: [[1, 1, "Pengeluaran per Kapita Disesuaikan"]]
+    sumber: "BPS, [Metode Baru] Pengeluaran per Kapita Disesuaikan"
+
+  - id: aps
+    folder: Angka Partisipasi Sekolah
+    pola: "*.csv"
+    reader: bps_kolom
+    baris_data_mulai: 4
+    kolom: {1: APS_7_12, 2: APS_13_15, 3: APS_16_18, 4: APS_19_23}
+    cek_header: [[2, 1, "7-12"], [2, 2, "13-15"], [2, 3, "16-18"], [2, 4, "19-23"]]
+    sumber: "BPS, Angka Partisipasi Sekolah (APS) Menurut Provinsi dan Kelompok Umur"
+
+  - id: neet
+    folder: NEET
+    pola: "*.csv"
+    reader: bps_kolom
+    baris_data_mulai: 3
+    kolom: {1: NEET}
+    cek_header: [[1, 1, "NEET"]]
+    sumber: "BPS, Percentage of Youth (Aged 15-24 Years) NEET"
+
+  - id: formal
+    folder: Tenaga Kerja Formal
+    pola: "*.csv"
+    reader: bps_kolom
+    baris_data_mulai: 3
+    kolom: {1: PEKERJA_FORMAL}
+    cek_header: [[1, 1, "Tenaga Kerja Formal"]]
+    sumber: "BPS, Persentase Tenaga Kerja Formal Menurut Provinsi"
+
+  - id: kemiskinan
+    folder: Kemiskinan
+    pola: "*.csv"
+    reader: bps_kolom
+    baris_data_mulai: 5
+    kolom: {1: MISKIN_KOTA, 4: MISKIN_DESA, 7: MISKIN, 8: MISKIN_SEP}
+    cek_header:
+      - [2, 1, "Perkotaan"]
+      - [2, 4, "Perdesaan"]
+      - [2, 7, "Jumlah"]
+      - [4, 1, "Maret"]
+      - [4, 7, "Maret"]
+      - [4, 8, "September"]
+    sumber: "BPS, Persentase Penduduk Miskin (P0) Menurut Provinsi dan Daerah"
+
+  - id: tpt
+    folder: TPT UMUM
+    pola: "*.csv"
+    reader: bps_kolom
+    baris_data_mulai: 1
+    kolom: {1: TPT_FEB, 2: TPT, 4: TPAK}
+    cek_header: [[0, 1, "TPT) - Februari"], [0, 2, "TPT) - Agustus"], [0, 4, "TPAK) - Agustus"]]
+    sumber: "BPS, Tingkat Pengangguran Terbuka (TPT) dan TPAK Menurut Provinsi"
+
+  - id: ipm
+    folder: IPM
+    pola: "*.pdf"
+    reader: ipm_pdf
+    sumber: "BPS, Publikasi Indeks Pembangunan Manusia 2025 (Lampiran 1 & 3)"
+
+  # ---- Data tambahan: aktif otomatis begitu foldernya ada. Sesuaikan `kolom`/`cek_header`
+  # ---- setelah file diunduh (format ekspor BPS bisa sedikit berbeda).
+  - id: internet
+    folder: Akses Internet
+    pola: "*.csv"
+    reader: bps_kolom
+    baris_data_mulai: 3
+    kolom: {1: INTERNET}
+    cek_header: [[1, 1, "Internet"]]
+    wajib: false
+    sumber: "BPS, Persentase Penduduk yang Mengakses Internet Menurut Provinsi"
+
+nasional:
+  - id: tpt_pendidikan
+    folder: TPT tingkat pendidikan
+    pola: "*.csv"
+    reader: nasional
+    baris_data_mulai: 3
+    indikator: TPT_PENDIDIKAN
+    nama: Tingkat Pengangguran Terbuka menurut Pendidikan Tertinggi
+    satuan: persen
+    periode: Agustus (Sakernas)
+    kolom: {1: Tahunan}
+    cek_header: [[1, 1, "Tingkat Pengangguran Terbuka Berdasarkan Tingkat Pendidikan"]]
+    sumber: "BPS, Tingkat Pengangguran Terbuka Berdasarkan Tingkat Pendidikan"
+
+  - id: upah_sektor
+    folder: Upah Per Sektor
+    pola: "*.csv"
+    reader: nasional
+    baris_data_mulai: 4
+    indikator: UPAH_SEKTOR
+    nama: Rata-rata Upah/Gaji Buruh menurut Sektor (KBLI)
+    satuan: rupiah/bulan
+    periode: per kolom
+    kolom: {1: Februari, 2: Agustus}
+    cek_header: [[3, 1, "Februari"], [3, 2, "Agustus"]]
+    sumber: "BPS, Rata-Rata Upah/Gaji (Sakernas)"

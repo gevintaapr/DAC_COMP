@@ -1,0 +1,39 @@
+kode_bps,provinsi,iso_3166_2,pulau,kelompok_wilayah
+11,Aceh,ID-AC,Sumatera,Luar Jawa
+12,Sumatera Utara,ID-SU,Sumatera,Luar Jawa
+13,Sumatera Barat,ID-SB,Sumatera,Luar Jawa
+14,Riau,ID-RI,Sumatera,Luar Jawa
+15,Jambi,ID-JA,Sumatera,Luar Jawa
+16,Sumatera Selatan,ID-SS,Sumatera,Luar Jawa
+17,Bengkulu,ID-BE,Sumatera,Luar Jawa
+18,Lampung,ID-LA,Sumatera,Luar Jawa
+19,Kepulauan Bangka Belitung,ID-BB,Sumatera,Luar Jawa
+21,Kepulauan Riau,ID-KR,Sumatera,Luar Jawa
+31,DKI Jakarta,ID-JK,Jawa,Jawa
+32,Jawa Barat,ID-JB,Jawa,Jawa
+33,Jawa Tengah,ID-JT,Jawa,Jawa
+34,DI Yogyakarta,ID-YO,Jawa,Jawa
+35,Jawa Timur,ID-JI,Jawa,Jawa
+36,Banten,ID-BT,Jawa,Jawa
+51,Bali,ID-BA,Bali dan Nusa Tenggara,Luar Jawa
+52,Nusa Tenggara Barat,ID-NB,Bali dan Nusa Tenggara,Luar Jawa
+53,Nusa Tenggara Timur,ID-NT,Bali dan Nusa Tenggara,Luar Jawa
+61,Kalimantan Barat,ID-KB,Kalimantan,Luar Jawa
+62,Kalimantan Tengah,ID-KT,Kalimantan,Luar Jawa
+63,Kalimantan Selatan,ID-KS,Kalimantan,Luar Jawa
+64,Kalimantan Timur,ID-KI,Kalimantan,Luar Jawa
+65,Kalimantan Utara,ID-KU,Kalimantan,Luar Jawa
+71,Sulawesi Utara,ID-SA,Sulawesi,Luar Jawa
+72,Sulawesi Tengah,ID-ST,Sulawesi,Luar Jawa
+73,Sulawesi Selatan,ID-SN,Sulawesi,Luar Jawa
+74,Sulawesi Tenggara,ID-SG,Sulawesi,Luar Jawa
+75,Gorontalo,ID-GO,Sulawesi,Luar Jawa
+76,Sulawesi Barat,ID-SR,Sulawesi,Luar Jawa
+81,Maluku,ID-MA,Maluku,Luar Jawa
+82,Maluku Utara,ID-MU,Maluku,Luar Jawa
+91,Papua Barat,ID-PB,Papua,Luar Jawa
+92,Papua Barat Daya,ID-PD,Papua,Luar Jawa
+94,Papua,ID-PA,Papua,Luar Jawa
+95,Papua Selatan,ID-PS,Papua,Luar Jawa
+96,Papua Tengah,ID-PT,Papua,Luar Jawa
+97,Papua Pegunungan,ID-PE,Papua,Luar Jawa

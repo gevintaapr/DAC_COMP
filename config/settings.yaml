@@ -1,0 +1,36 @@
+# Pengaturan umum pipeline ETL
+paths:
+  raw_dir: Dataset            # data mentah dari BPS (tidak pernah diubah oleh pipeline)
+  processed_dir: data/processed
+  reports_dir: reports
+
+tahun_min: 2020
+tahun_max: 2026
+# Tahun potret (cross-section) untuk korelasi & klaster:
+# tahun terbaru di mana seluruh indikator inti tersedia untuk 38 provinsi.
+tahun_analisis: 2025
+jumlah_provinsi: 38
+
+outlier:
+  iqr_k: 1.5            # batas Tukey: Q1 - k*IQR dan Q3 + k*IQR
+  robust_z: 3.5         # batas |robust z| berbasis median & MAD (Iglewicz-Hoaglin)
+
+lonjakan_antartahun:
+  # Dipilih setelah uji ambang (3,5/5/6 x 10/15/20%): z>5 & >=15% menangkap kasus nyata
+  # (NEET Papua Tengah, APS 19-23 Maluku) tanpa membanjiri flag (17 dari +/-3.000 perubahan).
+  robust_z: 5           # |robust z| dari deviasi perubahan antartahun terhadap median provinsi lain
+  min_perubahan_persen: 15   # sekaligus perubahan relatif minimal (persen)
+
+# Pemekaran 2022: sebelum provinsi baru memiliki data pada suatu indikator & tahun,
+# angka provinsi induk masih mencakup wilayah lama sehingga tidak sebanding.
+pemekaran:
+  Papua: [Papua Selatan, Papua Tengah, Papua Pegunungan]
+  Papua Barat: [Papua Barat Daya]
+
+# Sel kosong yang memang tidak mungkin ada (bukan data hilang)
+tidak_berlaku:
+  - {provinsi: DKI Jakarta, indikator: MISKIN_DESA, alasan: "DKI Jakarta tidak memiliki wilayah perdesaan"}
+
+# Indikator yang perlu ditinjau manual karena perubahan tidak lazim (diisi dari hasil profiling)
+perlu_verifikasi:
+  - {provinsi: Maluku, indikator: APS_19_23, tahun: 2025, alasan: "Turun 39,58 -> 29,66 dalam satu tahun"}

@@ -1,0 +1,171 @@
+# Metadata & aturan validasi setiap indikator level provinsi.
+# peran:
+#   inti         -> dipakai di dashboard & analisis utama (wajib lengkap 38 provinsi di tahun_analisis)
+#   pendukung    -> dipakai sebagai konteks / pelengkap
+#   sensitivitas -> hanya untuk uji ketahanan hasil (bukan angka utama)
+# arah: positif = makin tinggi makin baik; negatif = makin rendah makin baik
+
+RLS:
+  nama: Rata-rata Lama Sekolah
+  lapisan: Input pendidikan
+  satuan: tahun
+  periode: Tahunan (Susenas Maret)
+  min: 0
+  max: 16
+  arah: positif
+  peran: inti
+APS_7_12:
+  nama: Angka Partisipasi Sekolah 7-12 tahun
+  lapisan: Input pendidikan
+  satuan: persen
+  periode: Tahunan (Susenas Maret)
+  min: 0
+  max: 100
+  arah: positif
+  peran: pendukung
+APS_13_15:
+  nama: Angka Partisipasi Sekolah 13-15 tahun
+  lapisan: Input pendidikan
+  satuan: persen
+  periode: Tahunan (Susenas Maret)
+  min: 0
+  max: 100
+  arah: positif
+  peran: pendukung
+APS_16_18:
+  nama: Angka Partisipasi Sekolah 16-18 tahun
+  lapisan: Input pendidikan
+  satuan: persen
+  periode: Tahunan (Susenas Maret)
+  min: 0
+  max: 100
+  arah: positif
+  peran: inti
+APS_19_23:
+  nama: Angka Partisipasi Sekolah 19-23 tahun
+  lapisan: Input pendidikan
+  satuan: persen
+  periode: Tahunan (Susenas Maret)
+  min: 0
+  max: 100
+  arah: positif
+  peran: inti
+HLS:
+  nama: Harapan Lama Sekolah
+  lapisan: Input pendidikan
+  satuan: tahun
+  periode: Tahunan (Susenas Maret)
+  min: 0
+  max: 18
+  arah: positif
+  peran: inti
+IPM:
+  nama: Indeks Pembangunan Manusia
+  lapisan: Output SDM
+  satuan: indeks
+  periode: Tahunan
+  min: 0
+  max: 100
+  arah: positif
+  peran: inti
+PENGELUARAN:
+  nama: Pengeluaran per Kapita Disesuaikan
+  lapisan: Outcome ekonomi
+  satuan: ribu rupiah/orang/tahun
+  periode: Tahunan (Susenas Maret)
+  min: 1000
+  max: 50000
+  arah: positif
+  peran: pendukung
+TPT:
+  nama: Tingkat Pengangguran Terbuka (Agustus)
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Agustus (Sakernas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: inti
+TPT_FEB:
+  nama: Tingkat Pengangguran Terbuka (Februari)
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Februari (Sakernas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: sensitivitas
+TPAK:
+  nama: Tingkat Partisipasi Angkatan Kerja (Agustus)
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Agustus (Sakernas)
+  min: 0
+  max: 100
+  arah: positif
+  peran: pendukung
+PEKERJA_FORMAL:
+  nama: Persentase Tenaga Kerja Formal
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Agustus (Sakernas)
+  min: 0
+  max: 100
+  arah: positif
+  peran: inti
+NEET:
+  nama: Persentase Pemuda 15-24 Tahun NEET
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Agustus (Sakernas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: inti
+MISKIN:
+  nama: Persentase Penduduk Miskin (Maret)
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Maret (Susenas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: inti
+MISKIN_KOTA:
+  nama: Persentase Penduduk Miskin Perkotaan (Maret)
+  lapisan: Inklusivitas
+  satuan: persen
+  periode: Maret (Susenas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: pendukung
+MISKIN_DESA:
+  nama: Persentase Penduduk Miskin Perdesaan (Maret)
+  lapisan: Inklusivitas
+  satuan: persen
+  periode: Maret (Susenas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: pendukung
+MISKIN_SEP:
+  nama: Persentase Penduduk Miskin (September)
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: September (Susenas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: sensitivitas
+
+# --- Disiapkan untuk data tambahan (aktif otomatis begitu file ada di Dataset/) ---
+INTERNET:
+  nama: Persentase Penduduk yang Mengakses Internet
+  lapisan: Output SDM
+  satuan: persen
+  periode: Tahunan (Susenas Maret)
+  min: 0
+  max: 100
+  arah: positif
+  peran: inti
