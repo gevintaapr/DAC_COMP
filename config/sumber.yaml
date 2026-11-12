@@ -7,6 +7,8 @@
 #   nasional    -> tabel nasional (baris = kategori, bukan provinsi)
 # hanya_provinsi: true -> file berisi kabupaten/kota; hanya baris provinsi (huruf kapital) yang diambil.
 # wajib: false -> jika folder belum ada, sumber dilewati dengan peringatan.
+# prioritas: angka kecil = diutamakan (default 1). Bila dua sumber memuat nilai yang sama,
+#            nilai sumber prioritas lebih tinggi dipakai dan selisihnya dilaporkan (rekonsiliasi).
 
 provinsi:
   - id: rls
@@ -89,6 +91,18 @@ provinsi:
     kolom: {1: TPT_FEB, 2: TPT, 4: TPAK}
     cek_header: [[0, 1, "TPT) - Februari"], [0, 2, "TPT) - Agustus"], [0, 4, "TPAK) - Agustus"]]
     sumber: "BPS, Tingkat Pengangguran Terbuka (TPT) dan TPAK Menurut Provinsi"
+
+  # Seri TPT yang sama dari tabel BPS lain (2020-2026). Prioritas 2: hanya mengisi nilai yang
+  # tidak ada di sumber utama (TPT 2026); sisanya dipakai untuk rekonsiliasi antarsumber.
+  - id: tpt_provinsi
+    folder: TPT provinsi
+    pola: "*.csv"
+    reader: bps_kolom
+    baris_data_mulai: 4
+    prioritas: 2
+    kolom: {1: TPT_FEB, 2: TPT}
+    cek_header: [[1, 1, "Tingkat Pengangguran Terbuka Menurut Provinsi"], [3, 1, "Februari"], [3, 2, "Agustus"]]
+    sumber: "BPS, Tingkat Pengangguran Terbuka Menurut Provinsi"
 
   - id: ipm
     folder: IPM

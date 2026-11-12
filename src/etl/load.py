@@ -111,7 +111,7 @@ Jumlah provinsi yang memiliki nilai, per indikator dan tahun (target {cfg.settin
 {_md(tersedia)}
 Catatan:
 - 2020-2023: provinsi pemekaran Papua belum memiliki data (34 provinsi), kecuali IPM yang dihitung ulang BPS untuk 38 provinsi sejak 2022.
-- 2026: baru tersedia untuk RLS, HLS, Pengeluaran, dan Kemiskinan Maret -> dipakai untuk tren saja, bukan cross-section.
+- 2026: baru tersedia untuk RLS, HLS, Pengeluaran, Kemiskinan Maret, dan TPT -> dipakai untuk tren saja, bukan cross-section.
 - Kemiskinan September 2023 kosong pada tabel sumber; karena itu kemiskinan memakai periode **Maret** (lengkap 2020-2026).
 
 Sel yang secara struktural tidak ada (bukan data hilang):
@@ -153,6 +153,10 @@ Nilai yang ditandai BPS dengan RSE 25-50% (estimasi kurang andal karena sampel k
 Nilai CSV dibandingkan dengan Lampiran 1 publikasi IPM (sumber berbeda, seharusnya identik):
 
 {_md(laporan['silang'])}
+Rekonsiliasi nilai ganda (indikator yang sama tersedia di lebih dari satu tabel BPS; nilai sumber
+prioritas utama yang dipakai, sumber lain hanya mengisi yang kosong):
+
+{_md(laporan['rekonsiliasi'])}
 ## 8. Sebaran data tahun {ta}
 
 {_md(laporan['distribusi'], index=True)}

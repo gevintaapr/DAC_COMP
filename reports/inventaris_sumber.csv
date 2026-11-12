@@ -51,6 +51,13 @@ tpt,"Dataset/TPT UMUM/Tingkat Pengangguran Terbuka (TPT) dan Tingkat Partisipasi
 tpt,"Dataset/TPT UMUM/Tingkat Pengangguran Terbuka (TPT) dan Tingkat Partisipasi Angkatan Kerja (TPAK) Menurut Provinsi, 2023.csv",117,30132b36b03ecbe78c5e1f42b44f90fbd68b28baad25a9f9fc5ba76c8e78c642
 tpt,"Dataset/TPT UMUM/Tingkat Pengangguran Terbuka (TPT) dan Tingkat Partisipasi Angkatan Kerja (TPAK) Menurut Provinsi, 2024.csv",117,a5d67017e32b097f15b7bc7e4be35dc6d48659f92efada4f52fd11b39aa0e5e3
 tpt,"Dataset/TPT UMUM/Tingkat Pengangguran Terbuka (TPT) dan Tingkat Partisipasi Angkatan Kerja (TPAK) Menurut Provinsi, 2025.csv",117,8b5fc75efa69fb7cb7b94938ac50195b7be2555abedfb7a6b10addfb7d75dc8f
+tpt_provinsi,"Dataset/TPT provinsi/Tingkat Pengangguran Terbuka Menurut Provinsi, 2020.csv",78,d73e41cb18155a18135dcb848a9ed2ec872276df9d4a3642a874c91a4b35d1b3
+tpt_provinsi,"Dataset/TPT provinsi/Tingkat Pengangguran Terbuka Menurut Provinsi, 2021.csv",78,73d6bb5db0b25b79cf43aa3acab9f1f2f35c236489740cca751ff0f92422061c
+tpt_provinsi,"Dataset/TPT provinsi/Tingkat Pengangguran Terbuka Menurut Provinsi, 2022.csv",78,720cd07bd965cc06e80980305cef5147cd64b99ace41e0ff944ea4005ce57c92
+tpt_provinsi,"Dataset/TPT provinsi/Tingkat Pengangguran Terbuka Menurut Provinsi, 2023.csv",78,c2c81acd4db9c5512daf4109ff6e8ca5cf47ed8b41d47a09b90f9ecad5129862
+tpt_provinsi,"Dataset/TPT provinsi/Tingkat Pengangguran Terbuka Menurut Provinsi, 2024.csv",78,abe81bce6cf151e0966e6138f59fd37c26415d9b05b599f1adbc0c2b095fc371
+tpt_provinsi,"Dataset/TPT provinsi/Tingkat Pengangguran Terbuka Menurut Provinsi, 2025.csv",78,eca15d4989d1cb39237fcedebbc1622c00f3b1fd2c564cec8b6387a960c1ba14
+tpt_provinsi,"Dataset/TPT provinsi/Tingkat Pengangguran Terbuka Menurut Provinsi, 2026.csv",78,25f28b2e895f6742f76eb7b232d169f1af5d34801e0985035b98d91a76b470c5
 ipm,Dataset/IPM/BPS0000-indeks_pembangunan_manusia_2025.pdf,156,bcbf49350cc305071307a378d512797a54f10e647289542dc2199728b88e4025
 tpt_pendidikan,"Dataset/TPT tingkat pendidikan/Tingkat Pengangguran Terbuka Berdasarkan Tingkat Pendidikan, 2020.csv",6,3c7eda6e25da62f7d84836521983c50e375f2190d61e6bdfe4027fae71ac1aa9
 tpt_pendidikan,"Dataset/TPT tingkat pendidikan/Tingkat Pengangguran Terbuka Berdasarkan Tingkat Pendidikan, 2021.csv",6,217dea546461ab959ca2b352a698432ecd17e4cb4eb740fce00d99e464c0f84f

@@ -169,7 +169,7 @@ def extract(cfg: Config) -> dict:
                 recs, ipm_komponen = baca_ipm_pdf(path, src)
             else:
                 raise PipelineError(f"Reader tidak dikenal: {src['reader']}")
-            prov += recs
+            prov += [dict(r, sumber_id=src["id"], prioritas=src.get("prioritas", 1)) for r in recs]
             inventaris.append(dict(sumber_id=src["id"], file=_rel(path), baris_diambil=len(recs), sha256=sha256(path)))
     for src in cfg.sumber["nasional"]:
         for path in _file_sumber(cfg, src):

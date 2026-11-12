@@ -23,9 +23,9 @@ log = logging.getLogger("etl")
 def run() -> dict:
     cfg = load_config()
     raw = extract(cfg)
-    prov, nas_prov = transform_provinsi(raw["provinsi"], cfg)
+    prov, nas_prov, rekon = transform_provinsi(raw["provinsi"], cfg)
     nasional = transform_nasional(raw["nasional"], nas_prov)
-    prov, laporan = validate(prov, raw["ipm_komponen"], cfg)
+    prov, laporan = validate(prov, raw["ipm_komponen"], rekon, cfg)
     paths = load(prov, nasional, laporan, raw["inventaris"], cfg)   # laporan tetap ditulis walau gagal
     pastikan_lulus(laporan)
     return dict(master=prov, nasional=nasional, laporan=laporan, paths=paths)

@@ -277,8 +277,10 @@ kode_provinsi,provinsi,tahun,indikator,nilai,satuan,status_data,catatan_keandala
 21,Kepulauan Riau,2021,TPT,9.91,persen,tersedia,,2.75,tinggi_moderat,False,-0.43,False,False,outlier_tinggi_moderat
 31,DKI Jakarta,2021,TPT,8.5,persen,tersedia,,1.95,,False,-2.45,True,False,lonjakan_antartahun
 32,Jawa Barat,2021,TPT,9.82,persen,tersedia,,2.7,tinggi_moderat,False,-0.64,False,False,outlier_tinggi_moderat
+36,Banten,2021,TPT,8.98,persen,tersedia,,2.22,,False,-1.66,True,False,lonjakan_antartahun
 91,Papua Barat,2021,TPT,5.84,persen,tersedia,,0.44,,True,,False,False,patahan_seri_pemekaran
 94,Papua,2021,TPT,3.33,persen,tersedia,,-0.98,,True,,False,False,patahan_seri_pemekaran
+21,Kepulauan Riau,2022,TPT,8.23,persen,tersedia,,2.26,,False,-1.68,True,False,lonjakan_antartahun
 91,Papua Barat,2022,TPT,5.37,persen,tersedia,,0.44,,True,,False,False,patahan_seri_pemekaran
 94,Papua,2022,TPT,2.83,persen,tersedia,,-1.18,,True,,False,False,patahan_seri_pemekaran
 51,Bali,2023,TPT,2.69,persen,tersedia,,-0.99,,False,-2.11,True,False,lonjakan_antartahun
@@ -297,7 +299,9 @@ kode_provinsi,provinsi,tahun,indikator,nilai,satuan,status_data,catatan_keandala
 94,Papua,2022,TPT_FEB,3.6,persen,tersedia,,-0.8,,True,,False,False,patahan_seri_pemekaran
 91,Papua Barat,2023,TPT_FEB,5.53,persen,tersedia,,0.9,,True,,False,False,patahan_seri_pemekaran
 94,Papua,2023,TPT_FEB,3.49,persen,tersedia,,-0.74,,True,,False,False,patahan_seri_pemekaran
+31,DKI Jakarta,2024,TPT_FEB,6.03,persen,tersedia,,1.32,,False,-1.54,True,False,lonjakan_antartahun
 51,Bali,2024,TPT_FEB,1.87,persen,tersedia,,-1.59,,False,-1.86,True,False,lonjakan_antartahun
 76,Sulawesi Barat,2024,TPT_FEB,3.02,persen,tersedia,RSE 25-50% (estimasi kurang andal),-0.78,,False,-0.02,False,False,rse_tinggi
 95,Papua Selatan,2024,TPT_FEB,4.75,persen,tersedia,RSE 25-50% (estimasi kurang andal),0.43,,False,,False,False,rse_tinggi
 97,Papua Pegunungan,2024,TPT_FEB,1.18,persen,tersedia,RSE 25-50% (estimasi kurang andal),-2.07,,False,,False,False,rse_tinggi
+94,Papua,2025,TPT_FEB,6.92,persen,tersedia,,1.93,,False,1.11,True,False,lonjakan_antartahun

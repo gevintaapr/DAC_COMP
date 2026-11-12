@@ -58,6 +58,25 @@ def _parse(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def rekonsiliasi_sumber(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Satukan nilai ganda dari beberapa sumber untuk (wilayah, tahun, indikator) yang sama.
+
+    Aturan: pakai sumber prioritas tertinggi yang nilainya tersedia; sumber lain menjadi pembanding.
+    Kembalikan (data tanpa duplikat, tabel rekonsiliasi berisi setiap pasangan nilai yang tumpang tindih).
+    """
+    kunci = ["kode_provinsi", "tahun", "indikator"]
+    df = df.assign(_urut=(df["status_data"] != "tersedia").astype(int))
+    df = df.sort_values([*kunci, "_urut", "prioritas"], kind="stable")
+    terpilih = df.drop_duplicates(kunci, keep="first")
+    sisanya = df.drop(terpilih.index)
+    rekon = pd.DataFrame()
+    if not sisanya.empty:
+        rekon = sisanya[[*kunci, "sumber_id", "nilai"]].merge(
+            terpilih[[*kunci, "sumber_id", "nilai"]], on=kunci, suffixes=("_pembanding", "_dipakai"))
+        rekon["selisih"] = (rekon["nilai_dipakai"] - rekon["nilai_pembanding"]).abs()
+    return terpilih.drop(columns="_urut"), rekon
+
+
 def _lengkapi_grid(df: pd.DataFrame, kode_prov: list[int]) -> pd.DataFrame:
     """Pastikan setiap (indikator, tahun) memuat ke-38 provinsi; yang tidak ada di file
     ditulis eksplisit sebagai 'tidak_tersedia' agar data hilang terlihat, bukan tersembunyi."""
@@ -72,9 +91,9 @@ def _lengkapi_grid(df: pd.DataFrame, kode_prov: list[int]) -> pd.DataFrame:
     return out
 
 
-def transform_provinsi(raw: pd.DataFrame, cfg: Config) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Kembalikan (tabel panjang 38 provinsi, baris nasional 'Indonesia' dari tabel yang sama)."""
-    df = _parse(_map_wilayah(raw, cfg))
+def transform_provinsi(raw: pd.DataFrame, cfg: Config) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Kembalikan (tabel panjang 38 provinsi, baris nasional 'Indonesia', tabel rekonsiliasi antarsumber)."""
+    df, rekon = rekonsiliasi_sumber(_parse(_map_wilayah(raw, cfg)))
 
     tak_dikenal = sorted(set(df["indikator"]) - set(cfg.indikator))
     if tak_dikenal:
@@ -100,8 +119,9 @@ def transform_provinsi(raw: pd.DataFrame, cfg: Config) -> tuple[pd.DataFrame, pd
 
     prov["tahun"] = prov["tahun"].astype(int)
     prov = prov[KOLOM_LONG].sort_values(["indikator", "tahun", "kode_provinsi"]).reset_index(drop=True)
-    log.info("Transform: %d baris provinsi (%d tersedia)", len(prov), (prov["status_data"] == "tersedia").sum())
-    return prov, nasional
+    log.info("Transform: %d baris provinsi (%d tersedia), %d nilai ganda direkonsiliasi",
+             len(prov), (prov["status_data"] == "tersedia").sum(), len(rekon))
+    return prov, nasional, rekon
 
 
 def transform_nasional(raw_nas: pd.DataFrame, nasional_dari_prov: pd.DataFrame) -> pd.DataFrame:

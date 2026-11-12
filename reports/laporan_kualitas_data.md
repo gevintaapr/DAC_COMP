@@ -2,7 +2,7 @@
 
 _Dibuat otomatis oleh `python -m src.etl.pipeline` pada 12-11-2026._
 
-**Status pipeline: LULUS**  |  Tahun analisis (cross-section): **2025**  |  Baris `master_long`: 4,066  |  File sumber: 65
+**Status pipeline: LULUS**  |  Tahun analisis (cross-section): **2025**  |  Baris `master_long`: 4,142  |  File sumber: 72
 
 ## 1. Cek wajib (gerbang kualitas)
 
@@ -15,6 +15,7 @@ _Dibuat otomatis oleh `python -m src.etl.pipeline` pada 12-11-2026._
 | Nilai dalam rentang wajar per indikator | LULUS | semua nilai dalam rentang |
 | Indikator inti lengkap 38 provinsi pada tahun analisis 2025 | LULUS | 9 indikator inti lengkap |
 | Validasi silang CSV vs publikasi IPM | LULUS | 152 nilai identik |
+| Rekonsiliasi nilai ganda antarsumber | LULUS | 436 nilai identik |
 
 ## 2. Kelengkapan data
 
@@ -37,18 +38,18 @@ Jumlah provinsi yang memiliki nilai, per indikator dan tahun (target 38):
 | PENGELUARAN | 34 | 34 | 34 | 34 | 38 | 38 | 38 |
 | RLS | 34 | 34 | 34 | 34 | 38 | 38 | 38 |
 | TPAK | 34 | 34 | 34 | 34 | 38 | 38 | 0 |
-| TPT | 34 | 34 | 34 | 34 | 38 | 38 | 0 |
-| TPT_FEB | 34 | 34 | 34 | 34 | 38 | 38 | 0 |
+| TPT | 34 | 34 | 34 | 34 | 38 | 38 | 38 |
+| TPT_FEB | 34 | 34 | 34 | 34 | 38 | 38 | 38 |
 
 | status_data | jumlah_baris |
 |---|---|
-| tersedia | 3731 |
+| tersedia | 3807 |
 | tidak_tersedia | 328 |
 | tidak_berlaku | 7 |
 
 Catatan:
 - 2020-2023: provinsi pemekaran Papua belum memiliki data (34 provinsi), kecuali IPM yang dihitung ulang BPS untuk 38 provinsi sejak 2022.
-- 2026: baru tersedia untuk RLS, HLS, Pengeluaran, dan Kemiskinan Maret -> dipakai untuk tren saja, bukan cross-section.
+- 2026: baru tersedia untuk RLS, HLS, Pengeluaran, Kemiskinan Maret, dan TPT -> dipakai untuk tren saja, bukan cross-section.
 - Kemiskinan September 2023 kosong pada tabel sumber; karena itu kemiskinan memakai periode **Maret** (lengkap 2020-2026).
 
 Sel yang secara struktural tidak ada (bukan data hilang):
@@ -183,13 +184,17 @@ Guncangan bersama (mis. COVID) tidak ikut ditandai. Flag ini berarti "perlu dice
 | NEET | Papua Tengah | 2025 | 21.18 | -10.02 |
 | TPT | Riau | 2021 | 4.42 | -1.9 |
 | TPT | DKI Jakarta | 2021 | 8.5 | -2.45 |
+| TPT | Banten | 2021 | 8.98 | -1.66 |
+| TPT | Kepulauan Riau | 2022 | 8.23 | -1.68 |
 | TPT | Bali | 2023 | 2.69 | -2.11 |
 | TPT_FEB | Kepulauan Riau | 2021 | 10.12 | 4.14 |
 | TPT_FEB | DKI Jakarta | 2021 | 8.51 | 3.36 |
 | TPT_FEB | Bali | 2021 | 5.42 | 4.17 |
 | TPT_FEB | Kalimantan Utara | 2021 | 4.67 | -1.04 |
 | TPT_FEB | Kepulauan Riau | 2022 | 8.02 | -2.1 |
+| TPT_FEB | DKI Jakarta | 2024 | 6.03 | -1.54 |
 | TPT_FEB | Bali | 2024 | 1.87 | -1.86 |
+| TPT_FEB | Papua | 2025 | 6.92 | 1.11 |
 
 Ditandai manual untuk diverifikasi:
 
@@ -217,6 +222,14 @@ Nilai CSV dibandingkan dengan Lampiran 1 publikasi IPM (sumber berbeda, seharusn
 | HLS | 2025 | 38 | 0 | 0.0 |
 | PENGELUARAN | 2025 | 38 | 0 | 0.0 |
 | IPM | 2025 | 38 | 0 | 0.0 |
+
+Rekonsiliasi nilai ganda (indikator yang sama tersedia di lebih dari satu tabel BPS; nilai sumber
+prioritas utama yang dipakai, sumber lain hanya mengisi yang kosong):
+
+| indikator | sumber_id_dipakai | sumber_id_pembanding | tahun | dibandingkan | berbeda | selisih_maks |
+|---|---|---|---|---|---|---|
+| TPT | tpt | tpt_provinsi | 2020-2025 | 218 | 0 | 0.0 |
+| TPT_FEB | tpt | tpt_provinsi | 2020-2025 | 218 | 0 | 0.0 |
 
 ## 8. Sebaran data tahun 2025
 

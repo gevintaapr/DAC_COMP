@@ -39,10 +39,11 @@ Semua aturan ada di `config/`: master provinsi, metadata indikator, sumber file,
 
 ## Keputusan data
 
-- **Tahun analisis 2025**: tahun terbaru yang lengkap untuk 38 provinsi. Data 2026 (RLS, HLS, Pengeluaran, Kemiskinan Maret) hanya dipakai untuk tren.
+- **Tahun analisis 2025**: tahun terbaru yang lengkap untuk 38 provinsi. Data 2026 (RLS, HLS, Pengeluaran, Kemiskinan Maret, TPT) hanya dipakai untuk tren.
 - **TPT/TPAK periode Agustus**, **kemiskinan periode Maret**. Periode Februari dan September tetap disimpan dengan peran `sensitivitas` untuk uji ketahanan.
 - **Outlier ditandai, tidak dihapus.** Gunakan Spearman dan standarisasi robust, lalu jalankan analisis dengan dan tanpa `kandidat_uji_sensitivitas`.
 - **Patahan seri Papua**: angka Papua dan Papua Barat sebelum 2024 masih mencakup wilayah pemekaran, sehingga tidak boleh dibandingkan dengan tahun sesudahnya.
+- **Sumber ganda**: TPT tersedia di dua tabel BPS (`TPT UMUM` dan `TPT provinsi`). Nilai dari sumber prioritas utama yang dipakai, sumber kedua hanya mengisi tahun yang kosong (2026), dan semua nilai yang tumpang tindih dicek kesamaannya.
 - Kode provinsi memakai **kode BPS**, yang berbeda dengan kode Kemendagri untuk provinsi Papua. Untuk peta, gunakan nama atau `iso_3166_2`.
 
 ## Menambah data baru

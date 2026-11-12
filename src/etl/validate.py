@@ -207,7 +207,18 @@ def cakupan(df: pd.DataFrame) -> pd.DataFrame:
             .fillna(0).astype(int))
 
 
-def validate(df: pd.DataFrame, ipm_komponen: pd.DataFrame, cfg: Config) -> tuple[pd.DataFrame, dict]:
+def ringkas_rekonsiliasi(rekon: pd.DataFrame) -> pd.DataFrame:
+    if rekon.empty:
+        return pd.DataFrame()
+    r = rekon.dropna(subset=["nilai_dipakai", "nilai_pembanding"])
+    return (r.assign(beda=r["selisih"] > 1e-6)
+            .groupby(["indikator", "sumber_id_dipakai", "sumber_id_pembanding"])
+            .agg(tahun=("tahun", lambda s: f"{s.min()}-{s.max()}"), dibandingkan=("selisih", "size"),
+                 berbeda=("beda", "sum"), selisih_maks=("selisih", "max"))
+            .reset_index())
+
+
+def validate(df: pd.DataFrame, ipm_komponen: pd.DataFrame, rekon: pd.DataFrame, cfg: Config) -> tuple[pd.DataFrame, dict]:
     hasil_cek = cek_wajib(df, cfg)
     for r in hasil_cek.itertuples():
         log.info("[%s] %s - %s", r.status, r.cek, r.detail)
@@ -225,7 +236,15 @@ def validate(df: pd.DataFrame, ipm_komponen: pd.DataFrame, cfg: Config) -> tuple
         hasil_cek.loc[len(hasil_cek)] = dict(cek="Validasi silang CSV vs publikasi IPM", status="LULUS",
                                              detail=f"{int(silang['dibandingkan'].sum())} nilai identik")
 
-    laporan = dict(cek=hasil_cek, silang=silang, distribusi=ringkas_distribusi(df, cfg),
+    rek = ringkas_rekonsiliasi(rekon)
+    if not rek.empty:
+        n_beda = int(rek["berbeda"].sum())
+        hasil_cek.loc[len(hasil_cek)] = dict(
+            cek="Rekonsiliasi nilai ganda antarsumber", status="PERINGATAN" if n_beda else "LULUS",
+            detail=f"{n_beda} dari {int(rek['dibandingkan'].sum())} nilai berbeda" if n_beda
+            else f"{int(rek['dibandingkan'].sum())} nilai identik")
+
+    laporan = dict(cek=hasil_cek, silang=silang, rekonsiliasi=rek, distribusi=ringkas_distribusi(df, cfg),
                    sensitivitas=sensitivitas_periode(df, cfg), cakupan=cakupan(df),
                    lulus=not (hasil_cek["status"] == "GAGAL").any())
     return df, laporan

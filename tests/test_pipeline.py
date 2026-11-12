@@ -28,6 +28,12 @@ def test_angka_cocok_dengan_sumber(hasil):
     assert _nilai(m, "Papua Pegunungan", "IPM", 2025) == 54.91   # PDF Lampiran 3
     assert _nilai(m, "Aceh", "TPT", 2025) == 5.64                # TPT Agustus, bukan Februari
     assert _nilai(m, "Aceh", "MISKIN", 2025) == 12.33            # Kemiskinan Maret (kolom Jumlah)
+    assert _nilai(m, "Aceh", "TPT", 2026) == 5.70                # TPT 2026 dari sumber kedua (TPT provinsi)
+
+
+def test_rekonsiliasi_tpt_identik(hasil):
+    rek = hasil["laporan"]["rekonsiliasi"]
+    assert rek["dibandingkan"].sum() > 400 and rek["berbeda"].sum() == 0
 
 
 def test_tahun_analisis_lengkap_38(hasil):

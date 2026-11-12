@@ -58,3 +58,18 @@ def test_cek_wajib_mendeteksi_duplikat_dan_rentang():
     hasil = cek_wajib(rusak, CFG).set_index("cek")["status"]
     assert hasil["Tidak ada duplikat (provinsi, tahun, indikator)"] == "GAGAL"
     assert hasil["Nilai dalam rentang wajar per indikator"] == "GAGAL"
+
+
+def test_rekonsiliasi_utamakan_sumber_prioritas_dan_isi_yang_kosong():
+    from src.etl.transform import rekonsiliasi_sumber
+    base = dict(kode_provinsi=11, indikator="TPT", status_data="tersedia")
+    df = pd.DataFrame([
+        dict(base, tahun=2025, nilai=5.64, sumber_id="utama", prioritas=1),
+        dict(base, tahun=2025, nilai=5.70, sumber_id="kedua", prioritas=2),    # beda -> dilaporkan
+        dict(base, tahun=2026, nilai=np.nan, sumber_id="utama", prioritas=1, status_data="tidak_tersedia"),
+        dict(base, tahun=2026, nilai=5.70, sumber_id="kedua", prioritas=2),    # mengisi yang kosong
+    ])
+    hasil, rekon = rekonsiliasi_sumber(df)
+    v = hasil.set_index("tahun")["nilai"]
+    assert v[2025] == 5.64 and v[2026] == 5.70 and len(hasil) == 2
+    assert rekon.loc[rekon.tahun == 2025, "selisih"].round(2).item() == 0.06
