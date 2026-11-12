@@ -305,3 +305,27 @@ kode_provinsi,provinsi,tahun,indikator,nilai,satuan,status_data,catatan_keandala
 95,Papua Selatan,2024,TPT_FEB,4.75,persen,tersedia,RSE 25-50% (estimasi kurang andal),0.43,,False,,False,False,rse_tinggi
 97,Papua Pegunungan,2024,TPT_FEB,1.18,persen,tersedia,RSE 25-50% (estimasi kurang andal),-2.07,,False,,False,False,rse_tinggi
 94,Papua,2025,TPT_FEB,6.92,persen,tersedia,,1.93,,False,1.11,True,False,lonjakan_antartahun
+92,Papua Barat Daya,2025,TPT_PT,6.04,persen,tersedia,RSE 25-50% (estimasi kurang andal),0.7,,False,,False,False,rse_tinggi
+95,Papua Selatan,2025,TPT_PT,5.67,persen,tersedia,RSE 25-50% (estimasi kurang andal),0.38,,False,,False,False,rse_tinggi
+96,Papua Tengah,2025,TPT_PT,2.74,persen,tersedia,RSE 25-50% (estimasi kurang andal),-2.15,,False,,False,False,rse_tinggi
+97,Papua Pegunungan,2025,TPT_PT,1.99,persen,tersedia,RSE 25-50% (estimasi kurang andal),-2.8,,False,,False,False,rse_tinggi
+21,Kepulauan Riau,2025,TPT_SD,2.08,persen,tersedia,RSE 25-50% (estimasi kurang andal),-0.1,,False,,False,False,rse_tinggi
+31,DKI Jakarta,2025,TPT_SD,2.83,persen,tersedia,RSE 25-50% (estimasi kurang andal),0.78,,False,,False,False,rse_tinggi
+91,Papua Barat,2025,TPT_SD,2.72,persen,tersedia,RSE 25-50% (estimasi kurang andal),0.65,,False,,False,False,rse_tinggi
+92,Papua Barat Daya,2025,TPT_SD,3.14,persen,tersedia,RSE 25-50% (estimasi kurang andal),1.14,,False,,False,False,rse_tinggi
+94,Papua,2025,TPT_SD,5.14,persen,tersedia,RSE 25-50% (estimasi kurang andal),3.49,tinggi_moderat,False,,False,False,outlier_tinggi_moderat;rse_tinggi
+95,Papua Selatan,2025,TPT_SMA,5.29,persen,tersedia,RSE 25-50% (estimasi kurang andal),-0.81,,False,,False,False,rse_tinggi
+32,Jawa Barat,2025,TPT_SMK,12.81,persen,tersedia,,3.77,tinggi_ekstrem,False,,False,False,outlier_tinggi_ekstrem
+51,Bali,2025,TPT_SMK,2.11,persen,tersedia,,-3.37,rendah_moderat,False,,False,False,outlier_rendah_moderat
+71,Sulawesi Utara,2025,TPT_SMK,12.28,persen,tersedia,,3.42,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+81,Maluku,2025,TPT_SMK,12.06,persen,tersedia,,3.27,tinggi_moderat,False,,False,False,outlier_tinggi_moderat
+95,Papua Selatan,2025,TPT_SMK,4.67,persen,tersedia,RSE 25-50% (estimasi kurang andal),-1.66,,False,,False,False,rse_tinggi
+96,Papua Tengah,2025,TPT_SMK,6.1,persen,tersedia,RSE 25-50% (estimasi kurang andal),-0.71,,False,,False,False,rse_tinggi
+21,Kepulauan Riau,2025,TPT_SMP,4.7,persen,tersedia,RSE 25-50% (estimasi kurang andal),1.25,,False,,False,False,rse_tinggi
+51,Bali,2025,TPT_SMP,0.72,persen,tersedia,RSE 25-50% (estimasi kurang andal),-2.2,,False,,False,False,rse_tinggi
+75,Gorontalo,2025,TPT_SMP,2.15,persen,tersedia,RSE 25-50% (estimasi kurang andal),-0.96,,False,,False,False,rse_tinggi
+91,Papua Barat,2025,TPT_SMP,3.42,persen,tersedia,RSE 25-50% (estimasi kurang andal),0.14,,False,,False,False,rse_tinggi
+92,Papua Barat Daya,2025,TPT_SMP,4.8,persen,tersedia,RSE 25-50% (estimasi kurang andal),1.33,,False,,False,False,rse_tinggi
+94,Papua,2025,TPT_SMP,2.67,persen,tersedia,RSE 25-50% (estimasi kurang andal),-0.51,,False,,False,False,rse_tinggi
+95,Papua Selatan,2025,TPT_SMP,1.78,persen,tersedia,RSE 25-50% (estimasi kurang andal),-1.28,,False,,False,False,rse_tinggi
+96,Papua Tengah,2025,TPT_SMP,4.77,persen,tersedia,RSE 25-50% (estimasi kurang andal),1.31,,False,,False,False,rse_tinggi

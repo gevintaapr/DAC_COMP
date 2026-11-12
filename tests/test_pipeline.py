@@ -62,3 +62,14 @@ def test_nasional(hasil):
     smk = n[(n.indikator == "TPT_PENDIDIKAN") & (n.kategori == "SMA Kejuruan") & (n.tahun == 2025)]["nilai"].item()
     assert smk == 8.63
     assert set(n[n.indikator == "UPAH_SEKTOR"]["periode"]) == {"Februari", "Agustus"}
+
+
+def test_tpt_pendidikan_provinsi(hasil):
+    m = hasil["master"]
+    assert _nilai(m, "Jawa Barat", "TPT_SMK", 2025) == 12.81     # 606.627 / 4.736.774
+    pg = m[(m.provinsi == "Papua Pegunungan") & (m.indikator == "TPT_SMK") & (m.tahun == 2025)].iloc[0]
+    assert pg.status_data == "tidak_tersedia" and pg.catatan_keandalan.startswith("RSE > 50%")
+    kak = hasil["kak"]
+    kepri = kak[(kak.provinsi == "Kepulauan Riau") & (kak.jenis == "pengangguran") & (kak.pendidikan == "SD")].iloc[0]
+    assert kepri.jumlah == 4096 and kepri.rse_tinggi                # superskrip '1' tidak ikut terbaca sebagai angka
+    assert hasil["laporan"]["kak"]["tidak_cocok"].sum() == 0

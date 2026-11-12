@@ -19,6 +19,11 @@ _Dibuat otomatis oleh pipeline ETL pada 12-11-2026._
 | TPAK | Tingkat Partisipasi Angkatan Kerja (Agustus) | Outcome ekonomi | persen | Agustus (Sakernas) | positif | pendukung | 0 | 100 |
 | PEKERJA_FORMAL | Persentase Tenaga Kerja Formal | Outcome ekonomi | persen | Agustus (Sakernas) | positif | inti | 0 | 100 |
 | NEET | Persentase Pemuda 15-24 Tahun NEET | Outcome ekonomi | persen | Agustus (Sakernas) | negatif | inti | 0 | 100 |
+| TPT_SD | TPT Lulusan SD ke bawah (Agustus) | Outcome ekonomi | persen | Agustus (Sakernas) | negatif | pendukung | 0 | 100 |
+| TPT_SMP | TPT Lulusan SMP (Agustus) | Outcome ekonomi | persen | Agustus (Sakernas) | negatif | pendukung | 0 | 100 |
+| TPT_SMA | TPT Lulusan SMA umum (Agustus) | Outcome ekonomi | persen | Agustus (Sakernas) | negatif | inti | 0 | 100 |
+| TPT_SMK | TPT Lulusan SMK (Agustus) | Outcome ekonomi | persen | Agustus (Sakernas) | negatif | inti | 0 | 100 |
+| TPT_PT | TPT Lulusan Perguruan Tinggi (Diploma I-IV, S1-S3) (Agustus) | Outcome ekonomi | persen | Agustus (Sakernas) | negatif | inti | 0 | 100 |
 | MISKIN | Persentase Penduduk Miskin (Maret) | Outcome ekonomi | persen | Maret (Susenas) | negatif | inti | 0 | 100 |
 | MISKIN_KOTA | Persentase Penduduk Miskin Perkotaan (Maret) | Inklusivitas | persen | Maret (Susenas) | negatif | pendukung | 0 | 100 |
 | MISKIN_DESA | Persentase Penduduk Miskin Perdesaan (Maret) | Inklusivitas | persen | Maret (Susenas) | negatif | pendukung | 0 | 100 |

@@ -122,6 +122,51 @@ NEET:
   max: 100
   arah: negatif
   peran: inti
+TPT_SD:
+  nama: TPT Lulusan SD ke bawah (Agustus)
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Agustus (Sakernas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: pendukung
+TPT_SMP:
+  nama: TPT Lulusan SMP (Agustus)
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Agustus (Sakernas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: pendukung
+TPT_SMA:
+  nama: TPT Lulusan SMA umum (Agustus)
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Agustus (Sakernas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: inti
+TPT_SMK:
+  nama: TPT Lulusan SMK (Agustus)
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Agustus (Sakernas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: inti
+TPT_PT:
+  nama: TPT Lulusan Perguruan Tinggi (Diploma I-IV, S1-S3) (Agustus)
+  lapisan: Outcome ekonomi
+  satuan: persen
+  periode: Agustus (Sakernas)
+  min: 0
+  max: 100
+  arah: negatif
+  peran: inti
 MISKIN:
   nama: Persentase Penduduk Miskin (Maret)
   lapisan: Outcome ekonomi

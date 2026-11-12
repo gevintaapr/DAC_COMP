@@ -13,7 +13,7 @@ import sys
 
 from .extract import extract
 from .load import load
-from .transform import transform_nasional, transform_provinsi
+from .transform import siapkan_kak, transform_nasional, transform_provinsi, turunkan_tpt_pendidikan
 from .utils import PipelineError, load_config
 from .validate import pastikan_lulus, validate
 
@@ -23,12 +23,13 @@ log = logging.getLogger("etl")
 def run() -> dict:
     cfg = load_config()
     raw = extract(cfg)
-    prov, nas_prov, rekon = transform_provinsi(raw["provinsi"], cfg)
+    kak = siapkan_kak(raw["kak"], cfg)
+    prov, nas_prov, rekon = transform_provinsi(raw["provinsi"], cfg, turunan=turunkan_tpt_pendidikan(kak))
     nasional = transform_nasional(raw["nasional"], nas_prov)
-    prov, laporan = validate(prov, raw["ipm_komponen"], rekon, cfg)
-    paths = load(prov, nasional, laporan, raw["inventaris"], cfg)   # laporan tetap ditulis walau gagal
+    prov, laporan = validate(prov, raw["ipm_komponen"], rekon, cfg, kak=kak, nasional=nasional)
+    paths = load(prov, nasional, laporan, raw["inventaris"], cfg, kak=kak)   # laporan tetap ditulis walau gagal
     pastikan_lulus(laporan)
-    return dict(master=prov, nasional=nasional, laporan=laporan, paths=paths)
+    return dict(master=prov, nasional=nasional, kak=kak, laporan=laporan, paths=paths)
 
 
 def main(argv=None) -> int:

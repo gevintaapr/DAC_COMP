@@ -6,7 +6,9 @@ import logging
 import numpy as np
 import pandas as pd
 
-from .utils import KODE_NASIONAL, Config, PipelineError, kunci_nama, parse_nilai, peta_wilayah
+from .utils import CATATAN_RSE, KODE_NASIONAL, Config, PipelineError, kunci_nama, parse_nilai, peta_wilayah
+
+CATATAN_RSE_50 = "RSE > 50% (angka tidak dipublikasikan BPS)"
 
 log = logging.getLogger(__name__)
 
@@ -58,6 +60,45 @@ def _parse(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def siapkan_kak(kak: pd.DataFrame, cfg: Config) -> pd.DataFrame:
+    """Jumlah angkatan kerja & penganggur per provinsi x pendidikan dengan nama baku.
+
+    Tabel pengangguran BPS menggabungkan Diploma dan Universitas, sehingga angkatan kerja
+    Diploma + Universitas dijumlahkan menjadi PT agar pembilang dan penyebut sebanding.
+    """
+    if kak.empty:
+        return kak
+    df = _map_wilayah(kak, cfg)
+    ak = df[df["jenis"] == "angkatan_kerja"]
+    pt = (ak[ak["pendidikan"].isin(["DIPLOMA", "UNIVERSITAS"])]
+          .groupby(["kode_provinsi", "wilayah_raw", "tahun", "jenis", "tabel", "file_sumber", "sumber", "sumber_id"], as_index=False)
+          .agg(jumlah=("jumlah", "sum"), rse_tinggi=("rse_tinggi", "any"), disembunyikan_bps=("disembunyikan_bps", "any"))
+          .assign(pendidikan="PT"))
+    df = pd.concat([df, pt], ignore_index=True)
+    nama = dict(zip(cfg.provinsi["kode_bps"], cfg.provinsi["provinsi"]))
+    df["provinsi"] = df["kode_provinsi"].map(nama).fillna("Indonesia")
+    return df.drop(columns="wilayah_raw")
+
+
+def turunkan_tpt_pendidikan(kak_std: pd.DataFrame) -> pd.DataFrame:
+    """TPT_<jenjang> = penganggur / angkatan kerja x 100 (definisi BPS)."""
+    if kak_std.empty:
+        return pd.DataFrame()
+    kunci = ["kode_provinsi", "tahun", "pendidikan"]
+    p = kak_std[kak_std["jenis"] == "pengangguran"].set_index(kunci)
+    a = kak_std[kak_std["jenis"] == "angkatan_kerja"].set_index(kunci)
+    j = p.join(a[["jumlah", "rse_tinggi", "disembunyikan_bps"]], rsuffix="_ak", how="inner").reset_index()
+    j = j[j["pendidikan"] != "TOTAL"]
+    tersembunyi = j["disembunyikan_bps"] | j["disembunyikan_bps_ak"]
+    rse = (j["rse_tinggi"] | j["rse_tinggi_ak"]) & ~tersembunyi
+    return pd.DataFrame(dict(
+        kode_provinsi=j["kode_provinsi"], tahun=j["tahun"], indikator="TPT_" + j["pendidikan"],
+        nilai=(j["jumlah"] / j["jumlah_ak"] * 100).round(2).where(~tersembunyi),
+        status_data=np.where(tersembunyi, "tidak_tersedia", "tersedia"),
+        catatan_keandalan=np.select([tersembunyi, rse], [CATATAN_RSE_50, CATATAN_RSE], ""),
+        sumber=j["sumber"], file_sumber=j["file_sumber"], sumber_id=j["sumber_id"], prioritas=1))
+
+
 def rekonsiliasi_sumber(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Satukan nilai ganda dari beberapa sumber untuk (wilayah, tahun, indikator) yang sama.
 
@@ -91,9 +132,16 @@ def _lengkapi_grid(df: pd.DataFrame, kode_prov: list[int]) -> pd.DataFrame:
     return out
 
 
-def transform_provinsi(raw: pd.DataFrame, cfg: Config) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Kembalikan (tabel panjang 38 provinsi, baris nasional 'Indonesia', tabel rekonsiliasi antarsumber)."""
-    df, rekon = rekonsiliasi_sumber(_parse(_map_wilayah(raw, cfg)))
+def transform_provinsi(raw: pd.DataFrame, cfg: Config, turunan: pd.DataFrame | None = None
+                       ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Kembalikan (tabel panjang 38 provinsi, baris nasional 'Indonesia', tabel rekonsiliasi antarsumber).
+
+    `turunan`: indikator yang dihitung dari sumber lain (sudah berupa angka), mis. TPT menurut pendidikan.
+    """
+    df = _parse(_map_wilayah(raw, cfg))
+    if turunan is not None and not turunan.empty:
+        df = pd.concat([df, turunan], ignore_index=True)
+    df, rekon = rekonsiliasi_sumber(df)
 
     tak_dikenal = sorted(set(df["indikator"]) - set(cfg.indikator))
     if tak_dikenal:

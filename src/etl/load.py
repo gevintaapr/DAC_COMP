@@ -157,6 +157,13 @@ Rekonsiliasi nilai ganda (indikator yang sama tersedia di lebih dari satu tabel 
 prioritas utama yang dipakai, sumber lain hanya mengisi yang kosong):
 
 {_md(laporan['rekonsiliasi'])}
+Konsistensi tabel *Keadaan Angkatan Kerja Agustus 2025* (sumber TPT menurut pendidikan per provinsi):
+
+{_md(laporan['kak'])}
+TPT menurut pendidikan per provinsi dihitung = penganggur / angkatan kerja x 100 (definisi BPS).
+Jenjang Perguruan Tinggi (PT) menggabungkan Diploma I-IV dan S1-S3 karena tabel pengangguran BPS tidak memisahkannya.
+Sel yang ditandai BPS RSE 25-50% diberi flag `rse_tinggi`; sel NA (RSE > 50%) dibiarkan kosong.
+
 ## 8. Sebaran data tahun {ta}
 
 {_md(laporan['distribusi'], index=True)}
@@ -177,14 +184,16 @@ Spearman mendekati 1 berarti urutan provinsi praktis sama -> kesimpulan korelasi
 ## 11. Keterbatasan & data yang belum tersedia
 
 - Indikator terdaftar tetapi belum ada datanya: {', '.join(belum) if belum else '-'}.
-- TPT menurut pendidikan saat ini hanya level **nasional** (`nasional_long.csv`); versi per provinsi menunggu data tambahan.
+- TPT menurut pendidikan **per provinsi** hanya tersedia untuk Agustus 2025 (5 jenjang); tren 2020-2025 hanya level nasional.
+- Banyak sel TPT per pendidikan di provinsi kecil (terutama Papua) berstatus RSE tinggi -> tafsirkan hati-hati, utamakan perbandingan kelompok provinsi.
 - Upah hanya nasional per sektor (KBLI), dipakai sebagai konteks.
-- Periode tabel TPT menurut pendidikan tidak tertulis di file; diasumsikan Agustus (perlu dicek di metadata tabel BPS).
+- Periode tabel TPT menurut pendidikan (nasional) terverifikasi **Agustus**: identik dengan hitungan dari publikasi Keadaan Angkatan Kerja Agustus 2025.
 """
     return teks
 
 
-def load(df: pd.DataFrame, nasional: pd.DataFrame, laporan: dict, inventaris: pd.DataFrame, cfg: Config) -> dict:
+def load(df: pd.DataFrame, nasional: pd.DataFrame, laporan: dict, inventaris: pd.DataFrame, cfg: Config,
+         kak: pd.DataFrame | None = None) -> dict:
     ta = cfg.settings["tahun_analisis"]
     pdir, rdir = cfg.processed_dir, cfg.reports_dir
     pdir.mkdir(parents=True, exist_ok=True)
@@ -198,6 +207,7 @@ def load(df: pd.DataFrame, nasional: pd.DataFrame, laporan: dict, inventaris: pd
         "master_long": pdir / "master_long.csv",
         "master_wide": pdir / f"master_wide_{ta}.csv",
         "nasional_long": pdir / "nasional_long.csv",
+        "kak": pdir / f"angkatan_kerja_pendidikan_provinsi_{ta}.csv",
         "laporan": rdir / "laporan_kualitas_data.md",
         "kamus": rdir / "kamus_data.md",
         "flag": rdir / "flag_kualitas.csv",
@@ -207,6 +217,13 @@ def load(df: pd.DataFrame, nasional: pd.DataFrame, laporan: dict, inventaris: pd
     df.to_csv(paths["master_long"], index=False)
     wide.to_csv(paths["master_wide"], index=False)
     nasional.to_csv(paths["nasional_long"], index=False)
+    if kak is not None and not kak.empty:
+        # Jumlah orang (bobot) untuk agregasi tertimbang, mis. TPT SMK Jawa vs Luar Jawa
+        kak[["kode_provinsi", "provinsi", "tahun", "jenis", "pendidikan", "jumlah", "rse_tinggi",
+             "disembunyikan_bps", "tabel", "sumber", "file_sumber"]].sort_values(
+            ["jenis", "kode_provinsi", "pendidikan"]).to_csv(paths["kak"], index=False)
+    else:
+        paths.pop("kak")
     flag_cols = ["kode_provinsi", "provinsi", "tahun", "indikator", "nilai", "satuan", "status_data",
                  "catatan_keandalan", *KOLOM_FLAG]
     df.loc[df["flag_kualitas"] != "", flag_cols].to_csv(paths["flag"], index=False)

@@ -54,13 +54,19 @@ def cek_wajib(df: pd.DataFrame, cfg: Config) -> pd.DataFrame:
 
     ta = s["tahun_analisis"]
     inti = [i for i, m in cfg.indikator.items() if m["peran"] == "inti" and i in set(df["indikator"])]
-    kurang = []
+    kurang, disembunyikan = [], []
     for ind in inti:
-        n = df[(df["indikator"] == ind) & (df["tahun"] == ta) & (df["status_data"] == TERSEDIA)]["kode_provinsi"].nunique()
-        if n < s["jumlah_provinsi"]:
+        d = df[(df["indikator"] == ind) & (df["tahun"] == ta)]
+        n = d[d["status_data"] == TERSEDIA]["kode_provinsi"].nunique()
+        # sel yang sengaja tidak dipublikasikan BPS (RSE > 50%) bukan kegagalan pipeline
+        sembunyi = d[d["catatan_keandalan"].str.startswith("RSE > 50%")]
+        disembunyikan += [f"{ind} {r.provinsi}" for r in sembunyi.itertuples()]
+        if n + len(sembunyi) < s["jumlah_provinsi"]:
             kurang.append(f"{ind}: {n}/{s['jumlah_provinsi']}")
-    catat(f"Indikator inti lengkap 38 provinsi pada tahun analisis {ta}", not kurang,
-          "; ".join(kurang) or f"{len(inti)} indikator inti lengkap")
+    detail = "; ".join(kurang) or f"{len(inti)} indikator inti lengkap"
+    if disembunyikan and not kurang:
+        detail += f" (disembunyikan BPS karena RSE > 50%: {', '.join(disembunyikan)})"
+    catat(f"Indikator inti lengkap 38 provinsi pada tahun analisis {ta}", not kurang, detail)
 
     return pd.DataFrame(hasil)
 
@@ -207,6 +213,54 @@ def cakupan(df: pd.DataFrame) -> pd.DataFrame:
             .fillna(0).astype(int))
 
 
+def cek_kak(kak: pd.DataFrame, df: pd.DataFrame, nasional: pd.DataFrame) -> pd.DataFrame:
+    """Uji konsistensi tabel Keadaan Angkatan Kerja sebelum TPT menurut pendidikan dipakai."""
+    if kak is None or kak.empty:
+        return pd.DataFrame()
+    rows = []
+    tahun = int(kak["tahun"].iloc[0])
+    # PT pada angkatan kerja adalah turunan (Diploma + Universitas); pada pengangguran PT adalah kolom asli BPS
+    dasar = kak[~((kak["jenis"] == "angkatan_kerja") & (kak["pendidikan"] == "PT"))]
+
+    # 1. Jumlah per jenjang = kolom Jumlah pada setiap baris
+    tot = dasar[dasar["pendidikan"] == "TOTAL"].set_index(["jenis", "kode_provinsi"])["jumlah"]
+    g = dasar[dasar["pendidikan"] != "TOTAL"].groupby(["jenis", "kode_provinsi"])["jumlah"]
+    ada_na = g.apply(lambda x: x.isna().any())               # baris dengan sel NA tidak bisa dijumlahkan
+    jumlah = g.sum()[~ada_na]
+    sel = (jumlah - tot.reindex(jumlah.index)).abs()
+    rows.append(dict(cek="Jumlah jenjang = total baris", dibandingkan=len(sel), tidak_cocok=int((sel > 5).sum()),
+                     selisih_maks=float(sel.max()), satuan="orang"))
+
+    # 2. Jumlah 38 provinsi = baris Indonesia
+    prov = dasar[dasar["kode_provinsi"] != 0].groupby(["jenis", "pendidikan"])["jumlah"].sum()
+    indo = dasar[dasar["kode_provinsi"] == 0].set_index(["jenis", "pendidikan"])["jumlah"]
+    rel = ((prov - indo.reindex(prov.index)).abs() / indo.reindex(prov.index) * 100).dropna()
+    rows.append(dict(cek="Jumlah 38 provinsi = Indonesia", dibandingkan=len(rel), tidak_cocok=int((rel > 0.1).sum()),
+                     selisih_maks=round(float(rel.max()), 3), satuan="% dari total"))
+
+    # 3. TPT total per provinsi dari KAK = TPT Agustus pada tabel TPT provinsi
+    t = kak[kak["pendidikan"] == "TOTAL"].pivot_table(index="kode_provinsi", columns="jenis", values="jumlah")
+    tpt_kak = (t["pengangguran"] / t["angkatan_kerja"] * 100).round(2)
+    tpt_csv = df[(df["indikator"] == "TPT") & (df["tahun"] == tahun)].set_index("kode_provinsi")["nilai"]
+    d = (tpt_kak.drop(0, errors="ignore") - tpt_csv).abs().dropna()
+    rows.append(dict(cek="TPT total KAK = TPT Agustus (CSV)", dibandingkan=len(d), tidak_cocok=int((d > 0.011).sum()),
+                     selisih_maks=round(float(d.max()), 3), satuan="poin persen"))
+
+    # 4. TPT nasional per jenjang dari KAK = tabel TPT menurut pendidikan (nasional)
+    n = nasional[(nasional["indikator"] == "TPT_PENDIDIKAN") & (nasional["tahun"] == tahun)].set_index("kategori")["nilai"]
+    peta = {"SD": "Tidak/Belum Pernah Sekolah/Belum Tamat & Tamat SD", "SMP": "SMP", "SMA": "SMA umum", "SMK": "SMA Kejuruan"}
+    i = kak[kak["kode_provinsi"] == 0].pivot_table(index="pendidikan", columns="jenis", values="jumlah")
+    tpt_i = i["pengangguran"] / i["angkatan_kerja"] * 100
+    pembanding = {k: n.get(v) for k, v in peta.items()}
+    if {"Diploma I/II/III", "Universitas"} <= set(n.index):   # PT = rata-rata tertimbang AK Diploma & Universitas
+        ak_d, ak_u = i.loc["DIPLOMA", "angkatan_kerja"], i.loc["UNIVERSITAS", "angkatan_kerja"]
+        pembanding["PT"] = (n["Diploma I/II/III"] * ak_d + n["Universitas"] * ak_u) / (ak_d + ak_u)
+    d = pd.Series({k: abs(tpt_i[k] - v) for k, v in pembanding.items() if v is not None})
+    rows.append(dict(cek="TPT nasional per jenjang KAK = tabel nasional", dibandingkan=len(d),
+                     tidak_cocok=int((d > 0.011).sum()), selisih_maks=round(float(d.max()), 3), satuan="poin persen"))
+    return pd.DataFrame(rows)
+
+
 def ringkas_rekonsiliasi(rekon: pd.DataFrame) -> pd.DataFrame:
     if rekon.empty:
         return pd.DataFrame()
@@ -218,7 +272,8 @@ def ringkas_rekonsiliasi(rekon: pd.DataFrame) -> pd.DataFrame:
             .reset_index())
 
 
-def validate(df: pd.DataFrame, ipm_komponen: pd.DataFrame, rekon: pd.DataFrame, cfg: Config) -> tuple[pd.DataFrame, dict]:
+def validate(df: pd.DataFrame, ipm_komponen: pd.DataFrame, rekon: pd.DataFrame, cfg: Config,
+             kak: pd.DataFrame | None = None, nasional: pd.DataFrame | None = None) -> tuple[pd.DataFrame, dict]:
     hasil_cek = cek_wajib(df, cfg)
     for r in hasil_cek.itertuples():
         log.info("[%s] %s - %s", r.status, r.cek, r.detail)
@@ -244,7 +299,15 @@ def validate(df: pd.DataFrame, ipm_komponen: pd.DataFrame, rekon: pd.DataFrame, 
             detail=f"{n_beda} dari {int(rek['dibandingkan'].sum())} nilai berbeda" if n_beda
             else f"{int(rek['dibandingkan'].sum())} nilai identik")
 
-    laporan = dict(cek=hasil_cek, silang=silang, rekonsiliasi=rek, distribusi=ringkas_distribusi(df, cfg),
+    kakc = cek_kak(kak, df, nasional) if nasional is not None else pd.DataFrame()
+    if not kakc.empty:
+        n_beda = int(kakc["tidak_cocok"].sum())
+        hasil_cek.loc[len(hasil_cek)] = dict(
+            cek="Konsistensi tabel Keadaan Angkatan Kerja (TPT menurut pendidikan)",
+            status="PERINGATAN" if n_beda else "LULUS",
+            detail=f"{n_beda} ketidakcocokan dari {len(kakc)} uji" if n_beda else f"{len(kakc)} uji konsistensi cocok")
+
+    laporan = dict(cek=hasil_cek, silang=silang, rekonsiliasi=rek, kak=kakc, distribusi=ringkas_distribusi(df, cfg),
                    sensitivitas=sensitivitas_periode(df, cfg), cakupan=cakupan(df),
                    lulus=not (hasil_cek["status"] == "GAGAL").any())
     return df, laporan

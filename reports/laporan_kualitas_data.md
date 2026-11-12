@@ -2,7 +2,7 @@
 
 _Dibuat otomatis oleh `python -m src.etl.pipeline` pada 12-11-2026._
 
-**Status pipeline: LULUS**  |  Tahun analisis (cross-section): **2025**  |  Baris `master_long`: 4,142  |  File sumber: 72
+**Status pipeline: LULUS**  |  Tahun analisis (cross-section): **2025**  |  Baris `master_long`: 4,332  |  File sumber: 73
 
 ## 1. Cek wajib (gerbang kualitas)
 
@@ -13,9 +13,10 @@ _Dibuat otomatis oleh `python -m src.etl.pipeline` pada 12-11-2026._
 | Jumlah provinsi = 38 | LULUS | 38 provinsi |
 | Tahun dalam rentang 2020-2026 | LULUS | 0 baris di luar rentang |
 | Nilai dalam rentang wajar per indikator | LULUS | semua nilai dalam rentang |
-| Indikator inti lengkap 38 provinsi pada tahun analisis 2025 | LULUS | 9 indikator inti lengkap |
+| Indikator inti lengkap 38 provinsi pada tahun analisis 2025 | LULUS | 12 indikator inti lengkap (disembunyikan BPS karena RSE > 50%: TPT_SMK Papua Pegunungan) |
 | Validasi silang CSV vs publikasi IPM | LULUS | 152 nilai identik |
 | Rekonsiliasi nilai ganda antarsumber | LULUS | 436 nilai identik |
+| Konsistensi tabel Keadaan Angkatan Kerja (TPT menurut pendidikan) | LULUS | 4 uji konsistensi cocok |
 
 ## 2. Kelengkapan data
 
@@ -40,11 +41,16 @@ Jumlah provinsi yang memiliki nilai, per indikator dan tahun (target 38):
 | TPAK | 34 | 34 | 34 | 34 | 38 | 38 | 0 |
 | TPT | 34 | 34 | 34 | 34 | 38 | 38 | 38 |
 | TPT_FEB | 34 | 34 | 34 | 34 | 38 | 38 | 38 |
+| TPT_PT | 0 | 0 | 0 | 0 | 0 | 38 | 0 |
+| TPT_SD | 0 | 0 | 0 | 0 | 0 | 38 | 0 |
+| TPT_SMA | 0 | 0 | 0 | 0 | 0 | 38 | 0 |
+| TPT_SMK | 0 | 0 | 0 | 0 | 0 | 37 | 0 |
+| TPT_SMP | 0 | 0 | 0 | 0 | 0 | 38 | 0 |
 
 | status_data | jumlah_baris |
 |---|---|
-| tersedia | 3807 |
-| tidak_tersedia | 328 |
+| tersedia | 3996 |
+| tidak_tersedia | 329 |
 | tidak_berlaku | 7 |
 
 Catatan:
@@ -74,12 +80,15 @@ Metode: Tukey IQR (k=1.5) dan robust z-score berbasis median/MAD (|z|>3.5). `eks
 | Papua Tengah | 10 |
 | DI Yogyakarta | 4 |
 | Papua Selatan | 3 |
-| Papua | 2 |
-| DKI Jakarta | 2 |
+| Papua | 3 |
 | Papua Barat | 2 |
-| Bali | 1 |
+| Bali | 2 |
+| DKI Jakarta | 2 |
+| Jawa Barat | 1 |
 | Kepulauan Riau | 1 |
+| Maluku | 1 |
 | Papua Barat Daya | 1 |
+| Sulawesi Utara | 1 |
 
 | indikator | provinsi | nilai | robust_z | flag_outlier |
 |---|---|---|---|---|
@@ -121,6 +130,11 @@ Metode: Tukey IQR (k=1.5) dan robust z-score berbasis median/MAD (|z|>3.5). `eks
 | RLS | Papua Pegunungan | 4.3 | -4.68 | rendah_ekstrem |
 | RLS | Papua Tengah | 6.13 | -2.88 | rendah_moderat |
 | TPAK | Papua Pegunungan | 90.66 | 5.79 | tinggi_ekstrem |
+| TPT_SD | Papua | 5.14 | 3.49 | tinggi_moderat |
+| TPT_SMK | Bali | 2.11 | -3.37 | rendah_moderat |
+| TPT_SMK | Maluku | 12.06 | 3.27 | tinggi_moderat |
+| TPT_SMK | Sulawesi Utara | 12.28 | 3.42 | tinggi_moderat |
+| TPT_SMK | Jawa Barat | 12.81 | 3.77 | tinggi_ekstrem |
 
 Implikasi analisis:
 - Outlier didominasi provinsi Papua (kondisi nyata, bukan salah input) -> akan mendominasi korelasi Pearson dan K-Means.
@@ -211,6 +225,26 @@ Nilai yang ditandai BPS dengan RSE 25-50% (estimasi kurang andal karena sampel k
 | TPT_FEB | Sulawesi Barat | 2024 | 3.02 |
 | TPT_FEB | Papua Selatan | 2024 | 4.75 |
 | TPT_FEB | Papua Pegunungan | 2024 | 1.18 |
+| TPT_PT | Papua Barat Daya | 2025 | 6.04 |
+| TPT_PT | Papua Selatan | 2025 | 5.67 |
+| TPT_PT | Papua Tengah | 2025 | 2.74 |
+| TPT_PT | Papua Pegunungan | 2025 | 1.99 |
+| TPT_SD | Kepulauan Riau | 2025 | 2.08 |
+| TPT_SD | DKI Jakarta | 2025 | 2.83 |
+| TPT_SD | Papua Barat | 2025 | 2.72 |
+| TPT_SD | Papua Barat Daya | 2025 | 3.14 |
+| TPT_SD | Papua | 2025 | 5.14 |
+| TPT_SMA | Papua Selatan | 2025 | 5.29 |
+| TPT_SMK | Papua Selatan | 2025 | 4.67 |
+| TPT_SMK | Papua Tengah | 2025 | 6.1 |
+| TPT_SMP | Kepulauan Riau | 2025 | 4.7 |
+| TPT_SMP | Bali | 2025 | 0.72 |
+| TPT_SMP | Gorontalo | 2025 | 2.15 |
+| TPT_SMP | Papua Barat | 2025 | 3.42 |
+| TPT_SMP | Papua Barat Daya | 2025 | 4.8 |
+| TPT_SMP | Papua | 2025 | 2.67 |
+| TPT_SMP | Papua Selatan | 2025 | 1.78 |
+| TPT_SMP | Papua Tengah | 2025 | 4.77 |
 
 ## 7. Validasi silang antarsumber
 
@@ -230,6 +264,19 @@ prioritas utama yang dipakai, sumber lain hanya mengisi yang kosong):
 |---|---|---|---|---|---|---|
 | TPT | tpt | tpt_provinsi | 2020-2025 | 218 | 0 | 0.0 |
 | TPT_FEB | tpt | tpt_provinsi | 2020-2025 | 218 | 0 | 0.0 |
+
+Konsistensi tabel *Keadaan Angkatan Kerja Agustus 2025* (sumber TPT menurut pendidikan per provinsi):
+
+| cek | dibandingkan | tidak_cocok | selisih_maks | satuan |
+|---|---|---|---|---|
+| Jumlah jenjang = total baris | 77 | 0 | 0.0 | orang |
+| Jumlah 38 provinsi = Indonesia | 13 | 0 | 0.0 | % dari total |
+| TPT total KAK = TPT Agustus (CSV) | 38 | 0 | 0.0 | poin persen |
+| TPT nasional per jenjang KAK = tabel nasional | 5 | 0 | 0.005 | poin persen |
+
+TPT menurut pendidikan per provinsi dihitung = penganggur / angkatan kerja x 100 (definisi BPS).
+Jenjang Perguruan Tinggi (PT) menggabungkan Diploma I-IV dan S1-S3 karena tabel pengangguran BPS tidak memisahkannya.
+Sel yang ditandai BPS RSE 25-50% diberi flag `rse_tinggi`; sel NA (RSE > 50%) dibiarkan kosong.
 
 ## 8. Sebaran data tahun 2025
 
@@ -252,6 +299,11 @@ prioritas utama yang dipakai, sumber lain hanya mengisi yang kosong):
 | TPAK | 38.0 | 70.517 | 4.765 | 63.98 | 69.56 | 90.66 | 2.08 | Spearman (sebaran miring) |
 | TPT | 38.0 | 4.468 | 1.381 | 1.49 | 4.21 | 6.96 | 0.112 | Pearson/Spearman |
 | TPT_FEB | 38.0 | 4.43 | 1.389 | 1.58 | 4.19 | 6.92 | 0.201 | Pearson/Spearman |
+| TPT_PT | 38.0 | 5.111 | 1.4 | 1.99 | 5.225 | 7.86 | -0.012 | Pearson/Spearman |
+| TPT_SD | 38.0 | 2.211 | 0.878 | 0.76 | 2.165 | 5.14 | 0.945 | Pearson/Spearman |
+| TPT_SMA | 38.0 | 6.216 | 1.932 | 1.61 | 6.445 | 10.02 | -0.296 | Pearson/Spearman |
+| TPT_SMK | 37.0 | 7.309 | 2.318 | 2.11 | 7.16 | 12.81 | 0.506 | Pearson/Spearman |
+| TPT_SMP | 38.0 | 3.262 | 1.207 | 0.72 | 3.26 | 5.8 | 0.29 | Pearson/Spearman |
 
 ## 9. Sensitivitas pilihan periode survei
 
@@ -280,6 +332,7 @@ Spearman mendekati 1 berarti urutan provinsi praktis sama -> kesimpulan korelasi
 ## 11. Keterbatasan & data yang belum tersedia
 
 - Indikator terdaftar tetapi belum ada datanya: `INTERNET` (Persentase Penduduk yang Mengakses Internet).
-- TPT menurut pendidikan saat ini hanya level **nasional** (`nasional_long.csv`); versi per provinsi menunggu data tambahan.
+- TPT menurut pendidikan **per provinsi** hanya tersedia untuk Agustus 2025 (5 jenjang); tren 2020-2025 hanya level nasional.
+- Banyak sel TPT per pendidikan di provinsi kecil (terutama Papua) berstatus RSE tinggi -> tafsirkan hati-hati, utamakan perbandingan kelompok provinsi.
 - Upah hanya nasional per sektor (KBLI), dipakai sebagai konteks.
-- Periode tabel TPT menurut pendidikan tidak tertulis di file; diasumsikan Agustus (perlu dicek di metadata tabel BPS).
+- Periode tabel TPT menurut pendidikan (nasional) terverifikasi **Agustus**: identik dengan hitungan dari publikasi Keadaan Angkatan Kerja Agustus 2025.

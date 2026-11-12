@@ -110,6 +110,19 @@ provinsi:
     reader: ipm_pdf
     sumber: "BPS, Publikasi Indeks Pembangunan Manusia 2025 (Lampiran 1 & 3)"
 
+  # Publikasi Keadaan Angkatan Kerja (Sakernas Agustus): jumlah angkatan kerja & pengangguran
+  # per provinsi x pendidikan -> TPT menurut pendidikan per provinsi dihitung = pengangguran / AK x 100.
+  # Tabel pengangguran menggabungkan Diploma & Universitas -> AK Diploma + Universitas dijumlahkan (PT).
+  - id: kak_pendidikan
+    folder: keadaan angkatan kerja
+    pola: "*agustus_2025.pdf"
+    reader: kak_pdf
+    tabel_angkatan_kerja: 44
+    tabel_pengangguran: 123
+    kolom_angkatan_kerja: [SD, SMP, SMA, SMK, DIPLOMA, UNIVERSITAS]
+    kolom_pengangguran: [SD, SMP, SMA, SMK, PT]
+    sumber: "BPS, Keadaan Angkatan Kerja di Indonesia Agustus 2025 (Tabel 44 & 123), diolah"
+
   # ---- Data tambahan: aktif otomatis begitu foldernya ada. Sesuaikan `kolom`/`cek_header`
   # ---- setelah file diunduh (format ekspor BPS bisa sedikit berbeda).
   - id: internet

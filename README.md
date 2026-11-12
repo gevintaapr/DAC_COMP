@@ -7,7 +7,7 @@ Pipeline ETL untuk menyiapkan data BPS sebagai bahan dashboard dan analisis
 
 ```bash
 pip install -r requirements.txt
-python -m src.etl.pipeline     # ETL penuh, sekitar 20 detik
+python -m src.etl.pipeline     # ETL penuh, sekitar 1 menit (membaca 3 PDF)
 python -m pytest -q            # uji otomatis
 ```
 
@@ -32,6 +32,7 @@ Semua aturan ada di `config/`: master provinsi, metadata indikator, sumber file,
 | `data/processed/master_long.csv` | Tabel utama dashboard: 38 provinsi × tahun × indikator, lengkap dengan flag |
 | `data/processed/master_wide_2025.csv` | Satu baris per provinsi (potret 2025), bahan korelasi dan klaster |
 | `data/processed/nasional_long.csv` | Angka nasional (untuk kartu KPI), TPT menurut pendidikan, upah per sektor |
+| `data/processed/angkatan_kerja_pendidikan_provinsi_2025.csv` | Jumlah angkatan kerja & penganggur per provinsi × pendidikan (bobot untuk agregasi tertimbang) |
 | `reports/laporan_kualitas_data.md` | Hasil seluruh pemeriksaan data |
 | `reports/kamus_data.md` | Definisi indikator dan kolom |
 | `reports/flag_kualitas.csv` | Daftar nilai yang diberi flag |
@@ -44,6 +45,8 @@ Semua aturan ada di `config/`: master provinsi, metadata indikator, sumber file,
 - **Outlier ditandai, tidak dihapus.** Gunakan Spearman dan standarisasi robust, lalu jalankan analisis dengan dan tanpa `kandidat_uji_sensitivitas`.
 - **Patahan seri Papua**: angka Papua dan Papua Barat sebelum 2024 masih mencakup wilayah pemekaran, sehingga tidak boleh dibandingkan dengan tahun sesudahnya.
 - **Sumber ganda**: TPT tersedia di dua tabel BPS (`TPT UMUM` dan `TPT provinsi`). Nilai dari sumber prioritas utama yang dipakai, sumber kedua hanya mengisi tahun yang kosong (2026), dan semua nilai yang tumpang tindih dicek kesamaannya.
+- **TPT menurut pendidikan per provinsi** (`TPT_SD`, `TPT_SMP`, `TPT_SMA`, `TPT_SMK`, `TPT_PT`) dihitung dari publikasi *Keadaan Angkatan Kerja Agustus 2025* (Tabel 44 & 123): penganggur / angkatan kerja × 100. PT = Diploma I–IV + S1–S3 (tabel pengangguran BPS tidak memisahkannya). Hasilnya dicek ulang: TPT total per provinsi identik dengan TPT Agustus di tabel BPS dan TPT nasional per jenjang identik dengan tabel nasional. Publikasi Februari 2026 belum dipakai.
+- **Akses internet di luar cakupan** sementara (keputusan tim); entri sumbernya tetap disiapkan dan nonaktif sampai foldernya ada.
 - Kode provinsi memakai **kode BPS**, yang berbeda dengan kode Kemendagri untuk provinsi Papua. Untuk peta, gunakan nama atau `iso_3166_2`.
 
 ## Menambah data baru

@@ -12,6 +12,7 @@ import logging
 import re
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import pdfplumber
 
@@ -130,6 +131,78 @@ def baca_ipm_pdf(path: Path, src: dict) -> tuple[list[dict], pd.DataFrame]:
     return seri, pd.DataFrame(komponen)
 
 
+def _angka_atau_na(teks: str) -> bool:
+    return teks == "NA" or re.fullmatch(r"\d{1,3}(?:\.\d{3})*", teks) is not None
+
+
+def _baris_tabel_kak(page, n_kolom: int) -> list[dict]:
+    """Baris tabel Sakernas dari satu halaman PDF.
+
+    Superskrip '1' (penanda RSE 25-50%) memakai font lebih kecil; dipisahkan dari angka
+    lewat atribut ukuran font, lalu dicatat sebagai flag pada sel angka di sebelah kirinya.
+    """
+    words = _halaman_bersih(page).extract_words(extra_attrs=["size"])
+    besar = [w for w in words if w["size"] >= 7]
+    kecil = [w for w in words if w["size"] < 7 and w["text"] == "1"]
+    baris: list[list[dict]] = []
+    for w in sorted(besar, key=lambda w: (w["top"], w["x0"])):
+        if baris and abs(w["top"] - baris[-1][0]["top"]) < 3:
+            baris[-1].append(w)
+        else:
+            baris.append([w])
+    out, nama_tertunda = [], None
+    for ws in baris:
+        ws.sort(key=lambda w: w["x0"])
+        angka = [w for w in ws if _angka_atau_na(w["text"])]
+        nama = " ".join(w["text"] for w in ws if w not in angka).strip()
+        if len(angka) != n_kolom:
+            # baris 'Jumlah' di PDF: label dan angkanya berada di baris visual berbeda
+            nama_tertunda = nama if nama in ("Jumlah",) else nama_tertunda
+            continue
+        if not nama and nama_tertunda:
+            nama, nama_tertunda = nama_tertunda, None
+        if not re.fullmatch(r"[A-Za-z][A-Za-z .]*", nama or ""):
+            continue
+        rse = [any(abs(k["x0"] - a["x1"]) < 2 and abs(k["top"] - a["top"]) < 6 for k in kecil) for a in angka]
+        out.append(dict(wilayah_raw="Indonesia" if nama == "Jumlah" else nama,
+                        nilai=[a["text"] for a in angka], rse=rse))
+    return out
+
+
+def baca_kak_pdf(path: Path, src: dict) -> pd.DataFrame:
+    """Tabel angkatan kerja & pengangguran menurut provinsi x pendidikan (publikasi Keadaan Angkatan Kerja).
+
+    Keluaran berupa jumlah orang (bukan rasio); TPT dihitung di tahap transform.
+    """
+    tahun = tahun_dari_nama(path)
+    hasil = []
+    tabel = [("angkatan_kerja", src["tabel_angkatan_kerja"], src["kolom_angkatan_kerja"]),
+             ("pengangguran", src["tabel_pengangguran"], src["kolom_pengangguran"])]
+    with pdfplumber.open(path) as pdf:
+        teks_halaman = [(p, p.extract_text() or "") for p in pdf.pages]   # satu kali baca (PDF ratusan halaman)
+        for jenis, no, kolom in tabel:
+            pola = re.compile(rf"(^Tabel {no} Penduduk.*Menurut Provinsi dan Pendidikan|Lanjutan Tabel/Continued Table {no}\b)", re.M)
+            halaman = [p for p, t in teks_halaman if pola.search(t)]
+            if not halaman:
+                raise PipelineError(f"Tabel {no} tidak ditemukan di {path.name}")
+            judul = halaman[0].extract_text()
+            if f"Agustus {tahun}" not in judul and f"Februari {tahun}" not in judul:
+                raise PipelineError(f"Tahun Tabel {no} tidak cocok dengan nama file {path.name}")
+            n_kolom = len(kolom) + 1                        # + kolom Jumlah/Total
+            rows = [r for p in halaman for r in _baris_tabel_kak(p, n_kolom)]
+            for r in rows:
+                for kat, v, flag in zip([*kolom, "TOTAL"], r["nilai"], r["rse"]):
+                    hasil.append(dict(wilayah_raw=r["wilayah_raw"], tahun=tahun, jenis=jenis, pendidikan=kat,
+                                      jumlah=np.nan if v == "NA" else float(v.replace(".", "")),
+                                      rse_tinggi=flag, disembunyikan_bps=v == "NA",
+                                      tabel=f"Tabel {no}", file_sumber=_rel(path)))
+    df = pd.DataFrame(hasil)
+    n = df.groupby("jenis")["wilayah_raw"].nunique()
+    if (n < 39).any():
+        raise PipelineError(f"Baris tabel KAK tidak lengkap (target 38 provinsi + Indonesia): {n.to_dict()}")
+    return df
+
+
 def baca_nasional(path: Path, src: dict) -> list[dict]:
     rows = _baca_csv(path)
     tahun = tahun_dari_nama(path)
@@ -158,15 +231,19 @@ def _file_sumber(cfg: Config, src: dict) -> list[Path]:
 
 
 def extract(cfg: Config) -> dict:
-    """Kembalikan data mentah provinsi, nasional, pembanding IPM, dan inventaris file."""
+    """Kembalikan data mentah provinsi, nasional, pembanding IPM, jumlah AK/penganggur (KAK), dan inventaris file."""
     prov, nas, inventaris = [], [], []
-    ipm_komponen = pd.DataFrame()
+    ipm_komponen, kak = pd.DataFrame(), pd.DataFrame()
     for src in cfg.sumber["provinsi"]:
         for path in _file_sumber(cfg, src):
             if src["reader"] == "bps_kolom":
                 recs = baca_bps_kolom(path, src)
             elif src["reader"] == "ipm_pdf":
                 recs, ipm_komponen = baca_ipm_pdf(path, src)
+            elif src["reader"] == "kak_pdf":
+                kak = pd.concat([kak, baca_kak_pdf(path, src).assign(sumber=src["sumber"], sumber_id=src["id"])])
+                inventaris.append(dict(sumber_id=src["id"], file=_rel(path), baris_diambil=len(kak), sha256=sha256(path)))
+                continue
             else:
                 raise PipelineError(f"Reader tidak dikenal: {src['reader']}")
             prov += [dict(r, sumber_id=src["id"], prioritas=src.get("prioritas", 1)) for r in recs]
@@ -178,4 +255,4 @@ def extract(cfg: Config) -> dict:
             inventaris.append(dict(sumber_id=src["id"], file=_rel(path), baris_diambil=len(recs), sha256=sha256(path)))
     log.info("Extract: %d nilai provinsi, %d nilai nasional dari %d file", len(prov), len(nas), len(inventaris))
     return dict(provinsi=pd.DataFrame(prov), nasional=pd.DataFrame(nas),
-                ipm_komponen=ipm_komponen, inventaris=pd.DataFrame(inventaris))
+                ipm_komponen=ipm_komponen, kak=kak.reset_index(drop=True), inventaris=pd.DataFrame(inventaris))
