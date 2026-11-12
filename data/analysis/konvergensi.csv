@@ -1,0 +1,55 @@
+indikator,tahun,cv_persen,n_provinsi,tren_cv_per_tahun,perubahan_relatif_persen,arah
+RLS,2020,9.9,32,-0.175,-8.8,menyempit
+RLS,2021,9.84,32,-0.175,-8.8,menyempit
+RLS,2022,9.76,32,-0.175,-8.8,menyempit
+RLS,2023,9.56,32,-0.175,-8.8,menyempit
+RLS,2024,9.35,32,-0.175,-8.8,menyempit
+RLS,2025,9.02,32,-0.175,-8.8,menyempit
+HLS,2020,5.08,32,-0.057,-5.9,menyempit
+HLS,2021,4.97,32,-0.057,-5.9,menyempit
+HLS,2022,4.97,32,-0.057,-5.9,menyempit
+HLS,2023,4.89,32,-0.057,-5.9,menyempit
+HLS,2024,4.85,32,-0.057,-5.9,menyempit
+HLS,2025,4.78,32,-0.057,-5.9,menyempit
+APS_16_18,2020,7.65,32,-0.077,-5.0,menyempit
+APS_16_18,2021,7.63,32,-0.077,-5.0,menyempit
+APS_16_18,2022,7.6,32,-0.077,-5.0,menyempit
+APS_16_18,2023,7.73,32,-0.077,-5.0,menyempit
+APS_16_18,2024,6.91,32,-0.077,-5.0,menyempit
+APS_16_18,2025,7.27,32,-0.077,-5.0,menyempit
+APS_19_23,2020,24.6,32,-0.601,-12.2,menyempit
+APS_19_23,2021,24.04,32,-0.601,-12.2,menyempit
+APS_19_23,2022,24.85,32,-0.601,-12.2,menyempit
+APS_19_23,2023,22.97,32,-0.601,-12.2,menyempit
+APS_19_23,2024,22.24,32,-0.601,-12.2,menyempit
+APS_19_23,2025,21.61,32,-0.601,-12.2,menyempit
+PEKERJA_FORMAL,2020,23.54,32,-0.528,-11.2,menyempit
+PEKERJA_FORMAL,2021,22.85,32,-0.528,-11.2,menyempit
+PEKERJA_FORMAL,2022,24.45,32,-0.528,-11.2,menyempit
+PEKERJA_FORMAL,2023,23.47,32,-0.528,-11.2,menyempit
+PEKERJA_FORMAL,2024,22.72,32,-0.528,-11.2,menyempit
+PEKERJA_FORMAL,2025,20.91,32,-0.528,-11.2,menyempit
+TPT,2020,33.77,32,-1.111,-15.3,menyempit
+TPT,2021,33.05,32,-1.111,-15.3,menyempit
+TPT,2022,31.94,32,-1.111,-15.3,menyempit
+TPT,2023,30.42,32,-1.111,-15.3,menyempit
+TPT,2024,29.62,32,-1.111,-15.3,menyempit
+TPT,2025,28.6,32,-1.111,-15.3,menyempit
+NEET,2020,15.7,32,1.733,54.6,melebar
+NEET,2021,18.19,32,1.733,54.6,melebar
+NEET,2022,21.25,32,1.733,54.6,melebar
+NEET,2023,23.81,32,1.733,54.6,melebar
+NEET,2024,23.39,32,1.733,54.6,melebar
+NEET,2025,24.26,32,1.733,54.6,melebar
+MISKIN,2020,44.77,32,-0.181,-3.7,relatif tetap
+MISKIN,2021,42.81,32,-0.181,-3.7,relatif tetap
+MISKIN,2022,42.63,32,-0.181,-3.7,relatif tetap
+MISKIN,2023,43.46,32,-0.181,-3.7,relatif tetap
+MISKIN,2024,43.53,32,-0.181,-3.7,relatif tetap
+MISKIN,2025,43.1,32,-0.181,-3.7,relatif tetap
+PENGELUARAN,2020,19.23,32,-0.338,-7.1,menyempit
+PENGELUARAN,2021,19.23,32,-0.338,-7.1,menyempit
+PENGELUARAN,2022,18.86,32,-0.338,-7.1,menyempit
+PENGELUARAN,2023,18.39,32,-0.338,-7.1,menyempit
+PENGELUARAN,2024,17.88,32,-0.338,-7.1,menyempit
+PENGELUARAN,2025,17.86,32,-0.338,-7.1,menyempit

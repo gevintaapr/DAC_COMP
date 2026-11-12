@@ -7,7 +7,8 @@ Pipeline ETL untuk menyiapkan data BPS sebagai bahan dashboard dan analisis
 
 ```bash
 pip install -r requirements.txt
-python -m src.etl.pipeline     # ETL penuh, sekitar 1 menit (membaca 3 PDF)
+python -m src.etl.pipeline     # 1) ETL penuh, sekitar 1 menit (membaca 3 PDF)
+python -m src.analysis.analisis  # 2) analisis: korelasi, klaster, kasus menyimpang, grafik (~15 detik)
 python -m pytest -q            # uji otomatis
 ```
 
@@ -37,6 +38,24 @@ Semua aturan ada di `config/`: master provinsi, metadata indikator, sumber file,
 | `reports/kamus_data.md` | Definisi indikator dan kolom |
 | `reports/flag_kualitas.csv` | Daftar nilai yang diberi flag |
 | `reports/inventaris_sumber.csv` | Daftar file sumber beserta hash SHA-256 (jejak audit) |
+
+## Analisis (`src/analysis/`)
+
+| File | Isi |
+|---|---|
+| `reports/temuan_analisis.md` | **Temuan kunci, uji hipotesis, klaster, rekomendasi** (dibuat otomatis dari data) |
+| `reports/figures/*.png` | 6 grafik draf presentasi (korelasi, pendidikan vs formal, paradoks TPT, SMK vs SMA, tren, profil klaster) |
+| `data/analysis/klaster_provinsi.csv` | Klaster tiap provinsi + skor stabilitas keanggotaan (impor ke dashboard) |
+| `data/analysis/uji_hipotesis.csv` | Hasil uji hipotesis: ρ, CI bootstrap, tanpa pencilan, konsistensi 2020-2025, koreksi Holm |
+| `data/analysis/korelasi_spearman.csv` | Matriks korelasi format panjang (untuk heatmap di dashboard) |
+| `data/analysis/kasus_menyimpang.csv`, `kuadran_pendidikan_tpt.csv` | Provinsi yang menyimpang dari pola umum |
+| `data/analysis/kesenjangan.csv`, `konvergensi.csv` | Kesenjangan antarprovinsi & trennya 2020-2025 |
+
+Metode: Spearman + bootstrap CI (2.000x), uji tanpa 2 pencilan ekstrem, uji konsistensi antartahun, korelasi parsial,
+K-Means (k=4) pada data terstandarisasi robust yang divalidasi dengan Ward & bootstrap, residu Theil-Sen untuk kasus menyimpang.
+
+**Hipotesis (revisi tim):** H2 lama (akses internet vs NEET) diganti menjadi *"TPT rendah bukan tanda pasar kerja sehat"*
+karena akses internet di luar cakupan.
 
 ## Keputusan data
 

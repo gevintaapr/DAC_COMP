@@ -1,0 +1,8 @@
+hipotesis,pernyataan,var_x,var_y,n,rho,p_value,ci95_bawah,ci95_atas,rho_tanpa_pencilan,p_tanpa_pencilan,rho_min_antartahun,rho_maks_antartahun,tahun_diuji,kesimpulan,p_holm
+H1,Provinsi dengan RLS lebih tinggi memiliki persentase pekerja formal lebih tinggi,RLS,PEKERJA_FORMAL,38,0.54,0.0005,0.21,0.76,0.46,0.0053,0.502,0.554,2020-2025,Didukung data,0.002
+H2a,TPT rendah bukan tanda pasar kerja sehat: TPT justru searah dengan pekerja formal,PEKERJA_FORMAL,TPT,38,0.45,0.0046,0.11,0.7,0.39,0.0194,0.45,0.568,2020-2025,Didukung data,0.0129
+H2b,TPT bukan penanda kesejahteraan: hubungannya dengan kemiskinan lemah dan tidak signifikan,TPT,MISKIN,38,-0.23,0.1578,-0.58,0.15,-0.14,0.4219,-0.413,-0.234,2020-2025,Didukung data,
+H2c,Pekerja formal (bukan TPT) yang berhubungan dengan kemiskinan lebih rendah,PEKERJA_FORMAL,MISKIN,38,-0.74,0.0,-0.88,-0.51,-0.69,0.0,-0.755,-0.661,2020-2025,Didukung data,0.0
+H3a,Pendidikan tinggi tidak otomatis menurunkan pengangguran: RLS searah dengan TPT,RLS,TPT,38,0.45,0.0043,0.14,0.7,0.4,0.0157,0.409,0.503,2020-2025,Didukung data,0.0129
+H3b,Provinsi berpendidikan tinggi justru memiliki TPT lulusan perguruan tinggi lebih tinggi,RLS,TPT_PT,38,0.41,0.0116,0.09,0.67,0.31,0.0687,0.405,0.405,2025-2025,Didukung data,0.0129
+H3c,Capaian pendidikan tidak berhubungan dengan NEET,RLS,NEET,38,0.04,0.826,-0.33,0.42,-0.01,0.9572,-0.176,0.037,2020-2025,Didukung data,

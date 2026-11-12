@@ -1,0 +1,13 @@
+indikator,nama,terendah,nilai_terendah,tertinggi,nilai_tertinggi,rasio_tertinggi_terendah,rasio_p90_p10,median_jawa,median_luar_jawa,tertimbang_jawa,tertimbang_luar_jawa
+RLS,Rata-rata Lama Sekolah,Papua Pegunungan,4.3,DKI Jakarta,11.59,2.7,1.25,9.35,8.98,,
+HLS,Harapan Lama Sekolah,Papua Tengah,9.64,DI Yogyakarta,15.78,1.64,1.11,13.27,13.34,,
+APS_16_18,Angka Partisipasi Sekolah 16-18 tahun,Papua Tengah,44.61,DI Yogyakarta,93.03,2.09,1.21,79.46,76.96,,
+APS_19_23,Angka Partisipasi Sekolah 19-23 tahun,Papua Pegunungan,12.48,DI Yogyakarta,54.72,4.38,1.65,28.44,29.46,,
+IPM,Indeks Pembangunan Manusia,Papua Pegunungan,54.91,DKI Jakarta,85.05,1.55,1.14,76.69,74.47,,
+PEKERJA_FORMAL,Persentase Tenaga Kerja Formal,Papua Pegunungan,4.7,Kepulauan Riau,65.75,13.99,1.66,45.54,38.86,,
+TPT,Tingkat Pengangguran Terbuka (Agustus),Bali,1.49,Papua,6.96,4.67,2.16,5.36,4.19,,
+NEET,Persentase Pemuda 15-24 Tahun NEET,Bali,5.33,Sulawesi Utara,29.52,5.54,1.66,16.72,19.48,,
+MISKIN,Persentase Penduduk Miskin (Maret),Bali,3.72,Papua Pegunungan,30.03,8.07,4.0,8.25,10.07,,
+TPT_SMA,TPT Lulusan SMA umum (Agustus),Bali,1.61,Papua Barat Daya,10.02,6.22,2.13,6.86,6.3,7.58,6.24
+TPT_SMK,TPT Lulusan SMK (Agustus),Bali,2.11,Jawa Barat,12.81,6.07,2.23,7.99,7.16,9.4,6.99
+TPT_PT,"TPT Lulusan Perguruan Tinggi (Diploma I-IV, S1-S3) (Agustus)",Papua Pegunungan,1.99,Sumatera Barat,7.86,3.95,1.95,5.22,5.15,4.97,5.44

@@ -1,0 +1,39 @@
+kode_provinsi,provinsi,iso_3166_2,pulau,kelompok_wilayah,kunci_klaster,klaster,stabilitas_keanggotaan,keanggotaan
+11,Aceh,ID-AC,Sumatera,Luar Jawa,mismatch,"B. Pendidikan cukup, pengangguran & NEET tinggi",0.83,stabil
+12,Sumatera Utara,ID-SU,Sumatera,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.64,di perbatasan antarklaster
+13,Sumatera Barat,ID-SB,Sumatera,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.54,di perbatasan antarklaster
+14,Riau,ID-RI,Sumatera,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.7,stabil
+15,Jambi,ID-JA,Sumatera,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.8,stabil
+16,Sumatera Selatan,ID-SS,Sumatera,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.81,stabil
+17,Bengkulu,ID-BE,Sumatera,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.8,stabil
+18,Lampung,ID-LA,Sumatera,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.79,stabil
+19,Kepulauan Bangka Belitung,ID-BB,Sumatera,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.75,stabil
+21,Kepulauan Riau,ID-KR,Sumatera,Luar Jawa,maju,"A. Pendidikan tinggi, terserap pasar kerja formal",0.94,stabil
+31,DKI Jakarta,ID-JK,Jawa,Jawa,maju,"A. Pendidikan tinggi, terserap pasar kerja formal",0.95,stabil
+32,Jawa Barat,ID-JB,Jawa,Jawa,mismatch,"B. Pendidikan cukup, pengangguran & NEET tinggi",0.77,stabil
+33,Jawa Tengah,ID-JT,Jawa,Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.82,stabil
+34,DI Yogyakarta,ID-YO,Jawa,Jawa,maju,"A. Pendidikan tinggi, terserap pasar kerja formal",0.92,stabil
+35,Jawa Timur,ID-JI,Jawa,Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.82,stabil
+36,Banten,ID-BT,Jawa,Jawa,mismatch,"B. Pendidikan cukup, pengangguran & NEET tinggi",0.71,stabil
+51,Bali,ID-BA,Bali dan Nusa Tenggara,Luar Jawa,maju,"A. Pendidikan tinggi, terserap pasar kerja formal",0.88,stabil
+52,Nusa Tenggara Barat,ID-NB,Bali dan Nusa Tenggara,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.8,stabil
+53,Nusa Tenggara Timur,ID-NT,Bali dan Nusa Tenggara,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.64,di perbatasan antarklaster
+61,Kalimantan Barat,ID-KB,Kalimantan,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.76,stabil
+62,Kalimantan Tengah,ID-KT,Kalimantan,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.72,stabil
+63,Kalimantan Selatan,ID-KS,Kalimantan,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.76,stabil
+64,Kalimantan Timur,ID-KI,Kalimantan,Luar Jawa,maju,"A. Pendidikan tinggi, terserap pasar kerja formal",0.85,stabil
+65,Kalimantan Utara,ID-KU,Kalimantan,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.57,di perbatasan antarklaster
+71,Sulawesi Utara,ID-SA,Sulawesi,Luar Jawa,mismatch,"B. Pendidikan cukup, pengangguran & NEET tinggi",0.81,stabil
+72,Sulawesi Tengah,ID-ST,Sulawesi,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.8,stabil
+73,Sulawesi Selatan,ID-SN,Sulawesi,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.82,stabil
+74,Sulawesi Tenggara,ID-SG,Sulawesi,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.8,stabil
+75,Gorontalo,ID-GO,Sulawesi,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.69,di perbatasan antarklaster
+76,Sulawesi Barat,ID-SR,Sulawesi,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.73,stabil
+81,Maluku,ID-MA,Maluku,Luar Jawa,mismatch,"B. Pendidikan cukup, pengangguran & NEET tinggi",0.82,stabil
+82,Maluku Utara,ID-MU,Maluku,Luar Jawa,mismatch,"B. Pendidikan cukup, pengangguran & NEET tinggi",0.65,di perbatasan antarklaster
+91,Papua Barat,ID-PB,Papua,Luar Jawa,mismatch,"B. Pendidikan cukup, pengangguran & NEET tinggi",0.42,di perbatasan antarklaster
+92,Papua Barat Daya,ID-PD,Papua,Luar Jawa,mismatch,"B. Pendidikan cukup, pengangguran & NEET tinggi",0.8,stabil
+94,Papua,ID-PA,Papua,Luar Jawa,mismatch,"B. Pendidikan cukup, pengangguran & NEET tinggi",0.81,stabil
+95,Papua Selatan,ID-PS,Papua,Luar Jawa,menengah,"C. Menengah: TPT rendah, mayoritas informal",0.59,di perbatasan antarklaster
+96,Papua Tengah,ID-PT,Papua,Luar Jawa,tertinggal,D. Tertinggal struktural,1.0,stabil
+97,Papua Pegunungan,ID-PE,Papua,Luar Jawa,tertinggal,D. Tertinggal struktural,1.0,stabil

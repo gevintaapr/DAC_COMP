@@ -1,0 +1,7 @@
+var_x,var_y,kontrol,rho,keterangan
+RLS,MISKIN,-,-0.43,Pendidikan vs kemiskinan (tanpa kontrol)
+RLS,MISKIN,PEKERJA_FORMAL,-0.06,"Pendidikan vs kemiskinan, dikontrol pekerja formal"
+PEKERJA_FORMAL,MISKIN,RLS,-0.67,"Pekerja formal vs kemiskinan, dikontrol pendidikan"
+RLS,TPT,-,0.45,Pendidikan vs TPT (tanpa kontrol)
+RLS,TPT,TPAK,0.15,"Pendidikan vs TPT, dikontrol partisipasi angkatan kerja"
+RLS,PEKERJA_FORMAL,PENGELUARAN,0.34,"Pendidikan vs pekerja formal, dikontrol pengeluaran per kapita"
